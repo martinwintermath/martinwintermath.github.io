@@ -1,1 +1,79 @@
 /* css styles */
+
+a:link {
+    text-decoration: none;
+}
+
+div.math {
+    background-color: #F0F0F0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.7em; 
+    padding-right: 0.7em;
+    margin-left: -0.7em;
+    margin-right: -0.7em;
+    margin-bottom: 1rem;
+}
+
+div.math > p {
+    margin: 0;
+}
+
+div.thm {
+    border-left: 4px solid #D6898E;
+}
+div.conj {
+    border-left: 4px solid #D6898E;
+}
+div.def {
+    border-left: 4px solid #57c1ae;
+}
+
+.quarto-grid-item .card-title {
+    margin-bottom: 0.75em;
+    opacity: 100%;
+}
+.quarto-grid-item .card-text {
+    font-size: .9em;
+    opacity: 100%;
+}
+
+span.comingsoon {
+    opacity: 35%
+}
+
+span.dropdown-text {
+    text-transform: none;
+    font-size: 15px;
+    font-weight: 300;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-right: 0.35rem;
+    padding-left: 0.35rem;
+}
+
+.dropdown-menu {
+    border-radius: 0px;
+    border-width: 1.5pt;
+    background-color: hsl(0, 0%, 98%);
+    border-color: #343A40;
+    --bs-dropdown-link-hover-bg: hsl(0, 0%, 90%);
+}
+.dropdown-item {
+    color: #343A40;
+    --bs-dropdown-link-hover-color: #2c3136;
+}
+
+div.quarto-grid-link {
+    border-radius: 0px;
+}
+
+.card {
+    --bs-card-border-radius: 0.0rem;
+    --bs-card-inner-border-radius: 0.0rem;
+}
+
+.dropdown {
+    margin-right: -7pt;
+    margin-left: -2pt;
+}

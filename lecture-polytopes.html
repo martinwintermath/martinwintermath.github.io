@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Martin Winter</title>
+<title>Lecture – Polytope Theory – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,6 +26,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -36,6 +40,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -51,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -59,25 +104,19 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Martin Winter</span>
     </a>
   </div>
-          <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
-        <li>
-    <a class="dropdown-item" href="./wachspress-geometry.html">
- <span class="dropdown-text">Wachspress Geometry</span></a>
-  </li>  
-    </ul>
-  </li>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./research.html"> 
 <span class="menu-text">Research</span></a>
@@ -86,21 +125,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
-        <li>
-    <a class="dropdown-item" href="./lecture-rigidity.html">
- <span class="dropdown-text">Lecture "Rigidity Theory for Frameworks and Polytopes"</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lecture-polytopes.html">
- <span class="dropdown-text">Lecture "Polytope Theory"</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="./teaching.html"> 
 <span class="menu-text">Teaching</span></a>
@@ -114,7 +138,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
-          <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -127,40 +152,138 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture – Polytope Theory</h1>
+</div>
 
 
 
-<table style="margin-bottom:30px;">
-<tbody>
-<tr>
-<td valign="top">
-<p><span style="font-size:16pt;"><strong>Martin Winter</strong>, PhD</span> <br> <a href="mailto:martin.h.winter@warwick.ac.uk" class="email">martin.h.winter@warwick.ac.uk</a></p>
-<p>I am a <strong>mathematician</strong> and <a href="https://www.math-berlin.de/bms-faculty/dirichlet-postdoctoral-program"><strong>Dirichlet fellow</strong></a> at TU Berlin. My main mathematical interest is <strong>Geometry</strong> in its various forms, in particular, discrete, algebraic, convex and computational geometry, also touching on many aspects of graph theory, topology and representation theory. I am often working with polytopes and simplicial complexes, both in geometric and combinatorial contexts. Most recently I am studying the <a href="./wachspress-geometry.html">Wachspress Geometry</a> of convex polytopes.</p>
-I am principal investigator in the priority program <a href="https://www.combinatorial-synergies.de/">“Combinatorial Synergies”</a>. My project <em>“Wachspress Coordinates - a Bridge between Algebra, Geometry and Combinatorics”</em> will be conducted at the <a href="https://www.mis.mpg.de/de/">Max-Planck-Institute for Mathematics in the Sciences</a> in Leipzig (Germany), starting April 2025.
-</td>
-<td valign="top">
-<img src="img/me.jpg" width="250px" style="margin-left: 30px;">
-</td>
-</tr>
-<!--<tr>
+<div class="quarto-title-meta">
 
-<td>
-<img src="img/BWM-farbig-typo-schwarz.svg" width="250px"/>
-</td>
-
-<td>
-I am principal investigator in the priority program ["Combinatorial Synergies"](https://www.combinatorial-synergies.de/).
-My project *"Wachspress Coordinates - a Bridge betwen Algebra, Geometry and Combinatorics"* will be conducted at the [Max-Planck-Institute for Mathematics in the Sciences](https://www.mis.mpg.de/de/) in Leipzig (Germany), starting April 2025.
-</td>
-
-</tr>-->
-</tbody>
-</table>
-<center>
-<img src="img/tu_berlin.svg" width="22%"> <img width="2.5%"> <img src="img/BWM-farbig-typo-schwarz.svg" width="25%"> <img width="2.5%"> <img src="img/mpi_mis.svg" width="42%">
-</center>
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<p>I taught this <a href="https://www.maths.ox.ac.uk/groups/tcc">TCC course</a> on “Polytope Theory” starting from October 10th 2022 for 8 weeks on MS Teams.</p>
+<section id="introduction" class="level4">
+<h4 class="anchored" data-anchor-id="introduction">Introduction</h4>
+<p>Polytope Theory is the study of (convex) polytopes, the generalization of polygons (2D) and polyhedra (3D) to general dimension. Besides their geometric nature as convex sets, polytopes possess a rich combinatorial structure, making them exceptionally accessible by combinatorial techniques. The study of polytopes reaches from the antiquity (starting from the Platonic solids), over the 19th/20th century (understanding polytopes in 3D and initializing the study of polytopes in dimension <span class="math inline">\(\ge 3\)</span>), until today, where we understand that the richness of polytopal phenomena starts in dimension 4 and which led to findings such as universality. The subject has shown proximity to algebraic geometry, representation theory, analysis, optimization and many more.</p>
+</section>
+<section id="scope" class="level4">
+<h4 class="anchored" data-anchor-id="scope">Scope</h4>
+<p>In this course I aim to give an overview of this very diverse subject and to cover selected topics with focus towards research and open questions. I will try to cover the following:</p>
+<ul>
+<li>
+realization spaces and universality
+</li>
+<li>
+Gale duality and enumeration of combinatorial types
+</li>
+<li>
+face numbers, Dehn-Sommerville equations and the Upper Bound Theorem
+</li>
+<li>
+reconstruction from the edge graph
+</li>
+<li>
+spectral theory of polytopes, expansion and Izmestiev’s Theorem
+</li>
+<li>
+geometry and combinatorics of 3-dimensional polytopes
+</li>
+<li>
+inscribability and related geometric constraints
+</li>
+<li>
+symmetry properties of polytopes
+</li>
+<li>
+zonotopes
+</li>
+<li>
+the polytope algebra
+</li>
+</ul>
+</section>
+<section id="prerequisites" class="level4">
+<h4 class="anchored" data-anchor-id="prerequisites">Prerequisites</h4>
+<p>Besides an elementary geometric understanding, the prerequisites are minimal:</p>
+<ul>
+<li>
+linear algebra
+</li>
+<li>
+elementary graph theory: basic definitions (sub-graph, vertex degree, bipartite graph), connectivity, handshaking lemma, planar graphs, etc
+</li>
+<li>
+basic convex geometry: convex sets and cones, hyperplanes, some central theorems (Carathéodory’s theorem, hyperplane separation theorem) though we will give ample reminders for these
+</li>
+<li>
+basic combinatorics: mostly some counting coefficients
+</li>
+<li>
+basics of partially ordered sets, lattices, etc
+</li>
+</ul>
+<p>Not strictly necessary, but a background in any of the following will provide motivation and can help the understanding at some points: linear/convex optimization, algebraic topology, real representation theory of finite groups.</p>
+</section>
+<section id="literature" class="level4">
+<h4 class="anchored" data-anchor-id="literature">Literature</h4>
+<ul>
+<li>
+<a href="https://link.springer.com/book/10.1007/978-1-4613-0019-9">B. Grünbaum, “Convex Polytopes”</a> (a bit older, but with all the essentials)
+</li>
+<li>
+<a href="https://link.springer.com/book/10.1007/978-1-4613-8431-1">G. Ziegler, “Lectures on Polytopes”</a> (modern, more focused on combinatorial aspects in the later chapters)
+</li>
+<li>
+<a href="https://link.springer.com/book/10.1007/978-1-4612-1148-8">A. Brøndsted, “An Introduction to Convex Polytopes”</a>
+</li>
+<li>
+<a href="https://www.math.ucla.edu/~pak/book.htm">I. Pak, “Lectures on Discrete and Polyhedral Geometry”</a> (not specific to polytopes, but contains many neat proofs; freely available)
+</li>
+</ul>
+</section>
+<section id="course-notes" class="level4">
+<h4 class="anchored" data-anchor-id="course-notes">Course notes</h4>
+<ul>
+<li>
+<i class="fal fa-file-pdf" title="PDF document" aria-label="PDF document"></i> <a href="1_-_polytope_theory_10.10.2022.pdf">Lecture 1 (10/10/2022)</a> <br>Introduction (overview, motivation, applications), definition of polytope, V-polytopes, H-polytopes, Minkowski-Weyl theorem
+</li>
+<li>
+<i class="fal fa-file-pdf" title="PDF document" aria-label="PDF document"></i> <a href="2_-_polytope_theory_17.10.2022.pdf">Lecture 2 (17/10/2022)</a><br>Polar duals, faces and facets, face lattice, vertex figures
+</li>
+<li>
+<i class="fal fa-file-pdf" title="PDF document" aria-label="PDF document"></i> <a href="3_-_polytope_theory_24.10.2022.pdf">Lecture 3 (24/10/2022)</a><br>3-polytopes, edge-graphs, Steintz’ theorem, Balinski’s theorem, simple/simplicial polytopes, neighborly polytopes, cyclic polytopes, Gale’s evenness criterion, Kalai’s simple way to tell a simple polytope from its graph
+</li>
+<li>
+<i class="fal fa-file-pdf" title="PDF document" aria-label="PDF document"></i> <a href="4_-_polytope_theory_31.10.2022.pdf">Lecture 4 (31/10/2022)</a><br>Counting faces, Euler’s polyhedral formula + Euler Poincaré identity, Dehn-Sommerville equations, upper bound theorem, g-theorem
+</li>
+<li>
+<i class="fal fa-file-pdf" title="PDF document" aria-label="PDF document"></i> <a href="5_-_polytope_theory_07.11.2022.pdf">Lecture 5 (07/11/2022)</a><br>Polytopal complexes, shellability, line/linear shelling, Schlegel diagrams, abstract polytopal/simplicial complexes
+</li>
+<li>
+<i class="fal fa-file-pdf" title="PDF document" aria-label="PDF document"></i> <a href="6_-_polytope_theory_14.11.2022.pdf">Lecture 6 (14/11/2022)</a><br>Gale duality (linear/affine), spherical Gale diagrams, classifying small polytopes (d+1, d+2, d+3 vertices)
+</li>
+<li>
+<i class="fal fa-file-pdf" title="PDF document" aria-label="PDF document"></i>&nbsp;<a href="7_-_polytope_theory_21.11.2022.pdf">Lecture 7 (21/11/2022)</a> + GeoGebra files: <a href="addition.ggb">addition</a>, <a href="multiplication.ggb">multiplication</a>, <a href="square.ggb">squaring</a>, <a href="golden_ratio.ggb">golden ratio</a> Realization spaces, centered realization space, (affine) Gale diagrams, point-line arrangements, Mnëv’s universality theorem, universality of 4-polytopes, non-rational polytopes
+</li>
+<li>
+<p>
+<i class="fal fa-file-pdf" title="PDF document" aria-label="PDF document"></i> <a href="8_-_polytope_theory_28.11.2022.pdf" style="background-color: #ffffff;">Lecture 8 (28/11/2022)</a><br>Selection of research directions in polytope theory
+</p>
+</li>
+</ul>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

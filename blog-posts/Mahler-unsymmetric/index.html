@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-06-21">
 
-<title>Martin Winter</title>
+<title>The non-symmetric Mahler conjecture – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +24,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -51,18 +52,47 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Martin Winter</span>
     </a>
   </div>
@@ -73,17 +103,17 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
         <li>
-    <a class="dropdown-item" href="./wachspress-geometry.html">
+    <a class="dropdown-item" href="../../wachspress-geometry.html">
  <span class="dropdown-text">Wachspress Geometry</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
+    <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -92,25 +122,25 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li>
-    <a class="dropdown-item" href="./lecture-rigidity.html">
+    <a class="dropdown-item" href="../../lecture-rigidity.html">
  <span class="dropdown-text">Lecture "Rigidity Theory for Frameworks and Polytopes"</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./lecture-polytopes.html">
+    <a class="dropdown-item" href="../../lecture-polytopes.html">
  <span class="dropdown-text">Lecture "Polytope Theory"</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./teaching.html"> 
+    <a class="nav-link" href="../../teaching.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -120,45 +150,63 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The non-symmetric Mahler conjecture</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 21, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-<table style="margin-bottom:30px;">
-<tbody>
-<tr>
-<td valign="top">
-<p><span style="font-size:16pt;"><strong>Martin Winter</strong>, PhD</span> <br> <a href="mailto:martin.h.winter@warwick.ac.uk" class="email">martin.h.winter@warwick.ac.uk</a></p>
-<p>I am a <strong>mathematician</strong> and <a href="https://www.math-berlin.de/bms-faculty/dirichlet-postdoctoral-program"><strong>Dirichlet fellow</strong></a> at TU Berlin. My main mathematical interest is <strong>Geometry</strong> in its various forms, in particular, discrete, algebraic, convex and computational geometry, also touching on many aspects of graph theory, topology and representation theory. I am often working with polytopes and simplicial complexes, both in geometric and combinatorial contexts. Most recently I am studying the <a href="./wachspress-geometry.html">Wachspress Geometry</a> of convex polytopes.</p>
-I am principal investigator in the priority program <a href="https://www.combinatorial-synergies.de/">“Combinatorial Synergies”</a>. My project <em>“Wachspress Coordinates - a Bridge between Algebra, Geometry and Combinatorics”</em> will be conducted at the <a href="https://www.mis.mpg.de/de/">Max-Planck-Institute for Mathematics in the Sciences</a> in Leipzig (Germany), starting April 2025.
-</td>
-<td valign="top">
-<img src="img/me.jpg" width="250px" style="margin-left: 30px;">
-</td>
-</tr>
-<!--<tr>
 
-<td>
-<img src="img/BWM-farbig-typo-schwarz.svg" width="250px"/>
-</td>
-
-<td>
-I am principal investigator in the priority program ["Combinatorial Synergies"](https://www.combinatorial-synergies.de/).
-My project *"Wachspress Coordinates - a Bridge betwen Algebra, Geometry and Combinatorics"* will be conducted at the [Max-Planck-Institute for Mathematics in the Sciences](https://www.mis.mpg.de/de/) in Leipzig (Germany), starting April 2025.
-</td>
-
-</tr>-->
-</tbody>
-</table>
-<center>
-<img src="img/tu_berlin.svg" width="22%"> <img width="2.5%"> <img src="img/BWM-farbig-typo-schwarz.svg" width="25%"> <img width="2.5%"> <img src="img/mpi_mis.svg" width="42%">
-</center>
+<p>The <strong>Mahler conjecture</strong> is usually stated for centrally symmetric convex bodies. Its non-symmetric version seems however equally interesting and inaccessible. As it turns out, the non-symmetric version has a neat formulation in terms of volume (<em>not</em> Mahler volume) of self-polar bodies.</p>
+<hr>
+<p>Given a centrally symmetric convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> (which we shall assume means <span class="math inline">\(-B=B\)</span>), Kurt Mahler defined the following linearly invariant “notion of volume” – now known as the <a href="https://en.wikipedia.org/wiki/Mahler_volume"><strong>Mahler volume</strong></a>:</p>
+<p><span class="math display">\[
+M(B):=\operatorname{vol}(B)\cdot\operatorname{vol}(B^\circ).
+\]</span></p>
+<p>Here <span class="math inline">\(B^\circ:=\{y\in\Bbb R^n\mid \langle x,y\rangle\le 1\text{ for all }x\in B\}\)</span> denotes the polar dual of <span class="math inline">\(B\)</span>. This quantity is maximized for the sphere (which is known as the <em>Santaó inequality`</em>). Mahler conjectured that it is minimized for the cube: for every centrally symmetric convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> holds</p>
+<p><span class="math display">\[M(B)\ge M(\text{$n$-cube}) = \frac{4^n}{n!}.\]</span></p>
+<p>This is known as the <strong>Mahler conjecture</strong>.</p>
+<p>This is known as the <strong>Mahler conjecture</strong>. This problem is excruciatingly hard, and a lot of things have been written on it. <a href="...">Here</a> you can find a blog post by Terry Tao who already tells you most of it. He states that the problem might be so hard because there is not a single minimizer, but many, and it is hard to imagine a process that converges to exactly those. I am sceptical about this precise phrasing, because the Mahler conjecture has a non-centrallsy symmetric counterpart, which is equially widely open.</p>
+<p>I do not want to repeat what has been written on the conjecture by others. I just want to contribute two smaller details.</p>
+<p>The following is an equivalent formulation of the non-symmetric Mahler conjecture:</p>
+<!-- > **Conjecture.** The simplex has the smallest volume among all self-polar polytopes.-->
+<div class="math conj">
+<p><strong>Conjecture.</strong> <br> <em>The simplex has the smallest volume among all self-polar polytopes.</em></p>
+</div>
+<p>Text after the div</p>
+<!--
+<div class="warning" style='background-color:#F2BABA;padding:0.07em;'>
+<p style='margin-left:1em; margin-top:1em'>
+**Conjecture.** The simplex has the smallest volume among all self-polar polytopes.
+</p>
+</div>
+-->
 
 
 
@@ -582,6 +630,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="MathWinter/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

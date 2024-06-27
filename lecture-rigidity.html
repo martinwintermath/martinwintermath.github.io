@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Martin Winter</title>
+<title>Lecture – Rigidity Theory for Frameworks and Polytopes – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,6 +51,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -68,29 +97,29 @@ ul.task-list li input[type="checkbox"] {
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-hspace-0.8ex" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><span class="math inline">\(\hspace{-0.8ex}\)</span></span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-hspace-0.8ex">    
         <li>
-    <a class="dropdown-item" href="./wachspress-geometry.html">
+    <a class="dropdown-item" href="./wachspress-geometry.gmd">
  <span class="dropdown-text">Wachspress Geometry</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="./research.html"> 
-<span class="menu-text">Research</span></a>
+<span class="menu-text"><span class="math inline">\(\hspace{-2ex}\)</span>Research</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-hspace-0.8ex-1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><span class="math inline">\(\hspace{-0.8ex}\)</span></span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-hspace-0.8ex-1">    
         <li>
     <a class="dropdown-item" href="./lecture-rigidity.html">
  <span class="dropdown-text">Lecture "Rigidity Theory for Frameworks and Polytopes"</span></a>
@@ -103,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
   <li class="nav-item">
     <a class="nav-link" href="./teaching.html"> 
-<span class="menu-text">Teaching</span></a>
+<span class="menu-text"><span class="math inline">\(\hspace{-2ex}\)</span>Teaching</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./cv.html"> 
@@ -127,40 +156,68 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture – Rigidity Theory for Frameworks and Polytopes</h1>
+</div>
 
 
 
-<table style="margin-bottom:30px;">
-<tbody>
-<tr>
-<td valign="top">
-<p><span style="font-size:16pt;"><strong>Martin Winter</strong>, PhD</span> <br> <a href="mailto:martin.h.winter@warwick.ac.uk" class="email">martin.h.winter@warwick.ac.uk</a></p>
-<p>I am a <strong>mathematician</strong> and <a href="https://www.math-berlin.de/bms-faculty/dirichlet-postdoctoral-program"><strong>Dirichlet fellow</strong></a> at TU Berlin. My main mathematical interest is <strong>Geometry</strong> in its various forms, in particular, discrete, algebraic, convex and computational geometry, also touching on many aspects of graph theory, topology and representation theory. I am often working with polytopes and simplicial complexes, both in geometric and combinatorial contexts. Most recently I am studying the <a href="./wachspress-geometry.html">Wachspress Geometry</a> of convex polytopes.</p>
-I am principal investigator in the priority program <a href="https://www.combinatorial-synergies.de/">“Combinatorial Synergies”</a>. My project <em>“Wachspress Coordinates - a Bridge between Algebra, Geometry and Combinatorics”</em> will be conducted at the <a href="https://www.mis.mpg.de/de/">Max-Planck-Institute for Mathematics in the Sciences</a> in Leipzig (Germany), starting April 2025.
-</td>
-<td valign="top">
-<img src="img/me.jpg" width="250px" style="margin-left: 30px;">
-</td>
-</tr>
-<!--<tr>
+<div class="quarto-title-meta">
 
-<td>
-<img src="img/BWM-farbig-typo-schwarz.svg" width="250px"/>
-</td>
-
-<td>
-I am principal investigator in the priority program ["Combinatorial Synergies"](https://www.combinatorial-synergies.de/).
-My project *"Wachspress Coordinates - a Bridge betwen Algebra, Geometry and Combinatorics"* will be conducted at the [Max-Planck-Institute for Mathematics in the Sciences](https://www.mis.mpg.de/de/) in Leipzig (Germany), starting April 2025.
-</td>
-
-</tr>-->
-</tbody>
-</table>
-<center>
-<img src="img/tu_berlin.svg" width="22%"> <img width="2.5%"> <img src="img/BWM-farbig-typo-schwarz.svg" width="25%"> <img width="2.5%"> <img src="img/mpi_mis.svg" width="42%">
-</center>
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<p>I will teach a 10 week course on “Rigidity Theory for Frameworks and Polytopes” at TU Berlin starting in October 2024.</p>
+<section id="introduction" class="level4">
+<h4 class="anchored" data-anchor-id="introduction">Introduction</h4>
+<p><span class="comingsoon">coming soon</span></p>
+</section>
+<section id="scope" class="level4">
+<h4 class="anchored" data-anchor-id="scope">Scope</h4>
+<p><span class="comingsoon">coming soon</span></p>
+</section>
+<section id="prerequisites" class="level4">
+<h4 class="anchored" data-anchor-id="prerequisites">Prerequisites</h4>
+<p><span class="comingsoon">coming soon</span></p>
+<!--Besides an elementary geometric understanding, the prerequisites are minimal:
+
+<ul>
+<li>linear algebra</li>
+<li>elementary graph theory: basic definitions (sub-graph, vertex degree, bipartite graph), connectivity, handshaking lemma, planar graphs, etc</li>
+<li>basic convex geometry: convex sets and cones, hyperplanes, some central theorems (Carathéodory's theorem, hyperplane separation theorem) though we will give ample reminders for these</li>
+<li>basic combinatorics: mostly some counting coefficients</li>
+<li>basics of partially ordered sets, lattices, etc</li>
+</ul>
+
+Not strictly necessary, but a background in any of the following will provide motivation and can help the understanding at some points: linear/convex optimization, algebraic topology, real representation theory of finite groups.-->
+</section>
+<section id="literature" class="level4">
+<h4 class="anchored" data-anchor-id="literature">Literature</h4>
+<p><span class="comingsoon">coming soon</span></p>
+<!--
+<ul>
+<li><a href="https://link.springer.com/book/10.1007/978-1-4613-0019-9">B. Gr&uuml;nbaum, "Convex Polytopes"</a> (a bit older, but with all the essentials)</li>
+<li><a href="https://link.springer.com/book/10.1007/978-1-4613-8431-1">G. Ziegler, "Lectures on Polytopes"</a> (modern, more focused on combinatorial aspects in the later chapters)</li>
+<li><a href="https://link.springer.com/book/10.1007/978-1-4612-1148-8">A. Br&oslash;ndsted, "An Introduction to Convex Polytopes"</a></li>
+<li><a href="https://www.math.ucla.edu/~pak/book.htm">I. Pak, "Lectures on Discrete and Polyhedral Geometry"</a> (not specific to polytopes, but contains many neat proofs; freely available)</li>
+</ul>
+-->
+<!--
+#### Course notes ####
+
+Course notes will be uploaded here.
+-->
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
