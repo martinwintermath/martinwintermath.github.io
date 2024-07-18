@@ -29,6 +29,22 @@ div.conj {
 div.def {
     border-left: 4px solid #57c1ae;
 }
+div.rem {
+    border-left: 4px solid #b1b1b1;
+}
+
+hr.extend {
+    margin-top: 1.5em; 
+    margin-bottom: 1.5em;
+    margin-left: -.5em;
+    margin-right: -.5em;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .quarto-grid-item .card-title {
     margin-bottom: 0.75em;
@@ -37,6 +53,11 @@ div.def {
 .quarto-grid-item .card-text {
     font-size: .9em;
     opacity: 100%;
+}
+
+.quarto-post {
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 span.comingsoon {

@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-06-21">
 
-<title>The non-symmetric Mahler conjecture – Martin Winter</title>
+<title>Embedding 2-complexes in \Bbb R^4 – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ window.Quarto = {
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -97,17 +97,6 @@ window.Quarto = {
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
-        <li>
-    <a class="dropdown-item" href="../../wachspress-geometry.html">
- <span class="dropdown-text">Wachspress Geometry</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Research</span></a>
@@ -116,21 +105,10 @@ window.Quarto = {
     <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
-        <li>
-    <a class="dropdown-item" href="../../lecture-rigidity.html">
- <span class="dropdown-text">Lecture "Rigidity Theory for Frameworks and Polytopes"</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../lecture-polytopes.html">
- <span class="dropdown-text">Lecture "Polytope Theory"</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../teaching.html"> 
 <span class="menu-text">Teaching</span></a>
@@ -139,6 +117,10 @@ window.Quarto = {
     <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
           <div class="quarto-navbar-tools">
 </div>
@@ -146,63 +128,59 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">The non-symmetric Mahler conjecture</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">June 21, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-
-
-
-
-<p>The <strong>Mahler conjecture</strong> is usually stated for centrally symmetric convex bodies. Its non-symmetric version seems however equally interesting and inaccessible. As it turns out, the non-symmetric version has a neat formulation in terms of volume (<em>not</em> Mahler volume) of self-polar bodies.</p>
-<hr>
-<p>Given a centrally symmetric convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> (which we shall assume means <span class="math inline">\(-B=B\)</span>), Kurt Mahler defined the following linearly invariant “notion of volume” – now known as the <a href="https://en.wikipedia.org/wiki/Mahler_volume"><strong>Mahler volume</strong></a>:</p>
-<p><span class="math display">\[
-M(B):=\operatorname{vol}(B)\cdot\operatorname{vol}(B^\circ).
-\]</span></p>
-<p>Here <span class="math inline">\(B^\circ:=\{y\in\Bbb R^n\mid \langle x,y\rangle\le 1\text{ for all }x\in B\}\)</span> denotes the polar dual of <span class="math inline">\(B\)</span>. This quantity is maximized for the sphere (which is known as the <em>Santaó inequality`</em>). Mahler conjectured that it is minimized for the cube: for every centrally symmetric convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> holds</p>
-<p><span class="math display">\[M(B)\ge M(\text{$n$-cube}) = \frac{4^n}{n!}.\]</span></p>
-<p>This is known as the <strong>Mahler conjecture</strong>.</p>
-<p>This is known as the <strong>Mahler conjecture</strong>. This problem is excruciatingly hard, and a lot of things have been written on it. <a href="...">Here</a> you can find a blog post by Terry Tao who already tells you most of it. He states that the problem might be so hard because there is not a single minimizer, but many, and it is hard to imagine a process that converges to exactly those. I am sceptical about this precise phrasing, because the Mahler conjecture has a non-centrallsy symmetric counterpart, which is equially widely open.</p>
-<p>I do not want to repeat what has been written on the conjecture by others. I just want to contribute two smaller details.</p>
-<p>The following is an equivalent formulation of the non-symmetric Mahler conjecture:</p>
-<!-- > **Conjecture.** The simplex has the smallest volume among all self-polar polytopes.-->
-<div class="math conj">
-<p><strong>Conjecture.</strong> <br> <em>The simplex has the smallest volume among all self-polar polytopes.</em></p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Embedding 2-complexes in <span class="math inline">\(\Bbb R^4\)</span></h1>
 </div>
-<p>Text after the div</p>
-<!--
-<div class="warning" style='background-color:#F2BABA;padding:0.07em;'>
-<p style='margin-left:1em; margin-top:1em'>
-**Conjecture.** The simplex has the smallest volume among all self-polar polytopes.
-</p>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 21, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>A 2-dimensional CW-complex is a graph with some 2-dimensional disks attached. Each such complex embeds in 5-dimensional Euclidean space, but not neccessarily in 4-dimensional space, and deciding whether it embeds in <span class="math inline">\(\Bbb R^4\)</span> is a very hard problem.</p>
+<p>Here are some examples and counterexamples:</p>
+<ul>
+<li><span class="math inline">\(\mathcal K_6\)</span> is the complex obtained from the complete graph <span class="math inline">\(K_6\)</span> by attaching a 2-cell along each triangle. This complex embedds in <span class="math inline">\(\Bbb R^4\)</span>. One way to see this is to consider a Schlegel diagram of a 5-dimensional simplex (whose edge graph is <span class="math inline">\(K_6\)</span>); its 2-skeleton gives the desired embedding.</li>
+<li><span class="math inline">\(\mathcal K_7\)</span> (defined like <span class="math inline">\(\mathcal K_6\)</span> but from <span class="math inline">\(K_7\)</span>) does <em>not</em> embed.</li>
+<li>if we remove a single 2-cell from <span class="math inline">\(\mathcal K_7\)</span>, it does embed.</li>
+<li>starting from <span class="math inline">\(K_5\)</span> and adding three cones over it yields a classically non-embeddable complex.</li>
+</ul>
+<div class="warning" style="background-color:#EEEEEE;padding:0.07em;">
+<p style="margin-left:1em; margin-top:1em">
+<strong>Conjecture.</strong> If <span class="math inline">\(X_\circ\)</span> embeds then the following are equivalent:
+</p><ol type="i">
+<li>
+<span class="math inline">\(X_\bullet\)</span> embeds.
+</li>
+<li>
+<span class="math inline">\(X_\star\)</span> embeds.
+</li>
+</ol>
+<p></p>
 </div>
--->
 
 
 
@@ -626,8 +604,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="MathWinter/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-06-21">
+<meta name="dcterms.date" content="2024-06-18">
 
-<title>Embedding 2-complexes in \Bbb R^4 – Martin Winter</title>
+<title>Packing colorings and the mystery threshold 1.264499… – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ window.Quarto = {
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -97,17 +97,6 @@ window.Quarto = {
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
-        <li>
-    <a class="dropdown-item" href="../../wachspress-geometry.html">
- <span class="dropdown-text">Wachspress Geometry</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Research</span></a>
@@ -116,21 +105,10 @@ window.Quarto = {
     <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
-        <li>
-    <a class="dropdown-item" href="../../lecture-rigidity.html">
- <span class="dropdown-text">Lecture "Rigidity Theory for Frameworks and Polytopes"</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../lecture-polytopes.html">
- <span class="dropdown-text">Lecture "Polytope Theory"</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../teaching.html"> 
 <span class="menu-text">Teaching</span></a>
@@ -139,6 +117,10 @@ window.Quarto = {
     <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
           <div class="quarto-navbar-tools">
 </div>
@@ -146,60 +128,78 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Embedding 2-complexes in <span class="math inline">\(\Bbb R^4\)</span></h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">June 21, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-
-
-
-
-<p>A 2-dimensional CW-complex is a graph with some 2-dimensional disks attached. Each such complex embeds in 5-dimensional Euclidean space, but not neccessarily in 4-dimensional space, and deciding whether it embeds in <span class="math inline">\(\Bbb R^4\)</span> is a very hard problem.</p>
-<p>Here are some examples and counterexamples:</p>
-<ul>
-<li><span class="math inline">\(\mathcal K_6\)</span> is the complex obtained from the complete graph <span class="math inline">\(K_6\)</span> by attaching a 2-cell along each triangle. This complex embedds in <span class="math inline">\(\Bbb R^4\)</span>. One way to see this is to consider a Schlegel diagram of a 5-dimensional simplex (whose edge graph is <span class="math inline">\(K_6\)</span>); its 2-skeleton gives the desired embedding.</li>
-<li><span class="math inline">\(\mathcal K_7\)</span> (defined like <span class="math inline">\(\mathcal K_6\)</span> but from <span class="math inline">\(K_7\)</span>) does <em>not</em> embed.</li>
-<li>if we remove a single 2-cell from <span class="math inline">\(\mathcal K_7\)</span>, it does embed.</li>
-<li>starting from <span class="math inline">\(K_5\)</span> and adding three cones over it yields a classically non-embeddable complex.</li>
-</ul>
-<div class="warning" style="background-color:#EEEEEE;padding:0.07em;">
-<p style="margin-left:1em; margin-top:1em">
-<strong>Conjecture.</strong> If <span class="math inline">\(X_\circ\)</span> embeds then the following are equivalent:
-</p><ol type="i">
-<li>
-<span class="math inline">\(X_\bullet\)</span> embeds.
-</li>
-<li>
-<span class="math inline">\(X_\star\)</span> embeds.
-</li>
-</ol>
-<p></p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Packing colorings and the mystery threshold 1.264499…</h1>
 </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 18, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In a proper coloring of a graph any two vertices of the same color must be at distance at least two. In a <strong>packing coloring</strong> more general distance constraints can hold. For example, one might ask that any two vertices with the <span class="math inline">\(i\)</span>-th color <span class="math inline">\(c_i\)</span> are at distance <span class="math inline">\(&gt;i\)</span>. Here is a packing coloring of the infinite path <span class="math inline">\(P_\infty\)</span> that is periodic in both directions:</p>
+<p><span class="math display">\[
+\dots
+\rlap{\color{red}1}\raise{-1pt}\_\,
+\rlap{\color{blue}2}\raise{-1pt}\_\,
+\rlap{\color{red}1}\raise{-1pt}\_\,
+\rlap{\color{ForestGreen}3}\raise{-1pt}\_\,
+\rlap{\color{red}1}\raise{-1pt}\_\,
+\rlap{\color{blue}2}\raise{-1pt}\_\,
+\rlap{\color{red}1}\raise{-1pt}\_\,
+\rlap{\color{ForestGreen}3}\raise{-1pt}\_\,
+\rlap{\color{red}1}\raise{-1pt}\_\,
+\dots
+\]</span></p>
+<p>It is explicitly possible to have different colors with the same distance constraints, so here are two examples of this:</p>
+<p><span class="math display">\[
+\dots
+\rlap{\color{red}1}\raise{-1pt}\_\,
+\rlap{\color{blue}1}\raise{-1pt}\_\,
+\rlap{\color{red}1}\raise{-1pt}\_\,
+\rlap{\color{blue}1}\raise{-1pt}\_\,
+\rlap{\color{red}1}\raise{-1pt}\_\,
+\rlap{\color{blue}1}\raise{-1pt}\_\,
+\dots
+\qquad
+\dots
+\rlap{\color{red}2}\raise{-1pt}\_\,
+\rlap{\color{blue}2}\raise{-1pt}\_\,
+\rlap{\color{ForestGreen}2}\raise{-1pt}\_\,
+\rlap{\color{red}2}\raise{-1pt}\_\,
+\rlap{\color{blue}2}\raise{-1pt}\_\,
+\rlap{\color{ForestGreen}2}\raise{-1pt}\_\,
+\dots
+\]</span></p>
+<p>For a general packing coloring we fix a <em>pallette</em> <span class="math inline">\(\boldsymbol c\)</span>, that is, a finite or infinite sequence <span class="math inline">\(c_1\le c_2\le c_3\le\dots\)</span> of natural numbers (which we call <em>colors</em>). We say that a graph <span class="math inline">\(G\)</span> has a (packing) coloring using the pallette <span class="math inline">\(\boldsymbol c\)</span> if it can be colored using finitely many of the colors, so that any two vertices of color <span class="math inline">\(c_i\)</span> have distance <span class="math inline">\(&gt;c_i\)</span>.</p>
+<p>Note that a color <span class="math inline">\(c_i\)</span> can appear at most at every <span class="math inline">\((c_i+1)\)</span>-th vertex, hence, can have an asymptotic density of at most <span class="math inline">\((c_i+1)^{-1}\)</span>. We define the <em>density</em> of a pallette to be:</p>
+<p><span class="math display">\[\delta(\boldsymbol c) := \sum_i \frac1{c_i+1}.\]</span></p>
+<p>Since a proper packing coloring has asymptotic density exactly 1, we see that <span class="math inline">\(\delta(\boldsymbol c)&lt;1\)</span> implies that <span class="math inline">\(\boldsymbol c\)</span> does <em>not</em> packing color.</p>
+<p>If <span class="math inline">\(\delta(\boldsymbol c)&lt;1\)</span>, the pallette cannot color. In contrast, if <span class="math inline">\(\delta(\boldsymbol c)&gt;2\)</span>, then the pallette does color. Somewhere in between there is a number <span class="math inline">\(\zeta\)</span> so that whenever <span class="math inline">\(\delta(\boldsymbol c)&gt;\zeta\)</span>, then <span class="math inline">\(\boldsymbol c\)</span> colors. We conjecture</p>
+<p><span class="math display">\[\zeta=\sum_{i=1}^{\infty} \frac1{2^i+1} \approx 1.264499...\;.\]</span></p>
 
 
 
@@ -623,8 +623,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="MathWinter/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

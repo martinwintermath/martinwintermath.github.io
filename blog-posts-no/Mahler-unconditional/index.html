@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-06-21">
 
-<title>Martin Winter</title>
+<title>The Mahler conjecture for unconditional and locally antiblocking bodies – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +24,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -51,8 +52,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -62,33 +92,33 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Martin Winter</span>
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
+    <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./talks.html"> 
+    <a class="nav-link" href="../../talks.html"> 
 <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./teaching.html"> 
+    <a class="nav-link" href="../../teaching.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -105,55 +135,102 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The Mahler conjecture for unconditional and locally antiblocking bodies</h1>
+</div>
 
 
 
-<p><span style="font-size:16pt;"><strong>Martin Winter</strong>, PhD</span> <br> <a href="mailto:martin.winter@tu-berlin.de" class="email">martin.winter@tu-berlin.de</a></p>
-<table style="margin-bottom:15px;">
-<tbody>
-<tr>
-<td valign="top">
-<!--<div style="padding: 0.7rem; margin-left:-0.7rem; margin-bottom: 1rem; border: 1px solid lightgray;">
-<p style="margin:0px;">This website is currently under construction. For my previous website at the University of Warwick, [click here](https://warwick.ac.uk/fac/sci/maths/people/staff/winter/).</p>
-</div>-->
-<p>I am a <strong>mathematician</strong> and <a href="https://www.math-berlin.de/bms-faculty/dirichlet-postdoctoral-program"><strong>Dirichlet fellow</strong></a> at TU Berlin. My main mathematical interest is <strong>Geometry</strong> in its various forms, in particular, discrete, convex and real algebraic geometry, also touching on many aspects of graph theory, topology and representation theory. Most recently I am studying the <a href="./wachspress-geometry.html">Wachspress Geometry</a> of convex polytopes.</p>
-<p>I am principal investigator in the priority program <a href="https://www.combinatorial-synergies.de/">“Combinatorial Synergies”</a>. I will conduct my project <em>“Wachspress Coordinates - a Bridge between Algebra, Geometry and Combinatorics”</em> at the <a href="https://www.mis.mpg.de/de/">Max-Planck-Institute for Mathematics in the Sciences</a> in Leipzig (Germany), starting April 2025.</p>
-Before, I was postdoc at the <a href="https://warwick.ac.uk/fac/sci/maths/">University of Warwick</a> (UK). I got my PhD from TU Chemnitz (Germany) in 2021.
-</td>
-<td valign="top">
-<img src="img/me.jpg" width="250px" style="margin-left: 30px;">
-</td>
-</tr>
-<!--<tr>
+<div class="quarto-title-meta">
 
-<td>
-<img src="img/BWM-farbig-typo-schwarz.svg" width="250px"/>
-</td>
-
-<td>
-I am principal investigator in the priority program ["Combinatorial Synergies"](https://www.combinatorial-synergies.de/).
-My project *"Wachspress Coordinates - a Bridge betwen Algebra, Geometry and Combinatorics"* will be conducted at the [Max-Planck-Institute for Mathematics in the Sciences](https://www.mis.mpg.de/de/) in Leipzig (Germany), starting April 2025.
-</td>
-
-</tr>-->
-</tbody>
-</table>
-<p><strong>Here is where you can meet me next:</strong></p>
-<ul>
-<li>I will be at the <a href="https://www.mis.mpg.de/events/series/summer-school-in-algebraic-combinatorics">Summer School “Algebraic Combinatorics”</a> at the Max-Planck-Institute in Leipzig (July 15 - 19, 2024).</li>
-<li>I am invited speaker at the <a href="https://www.math-conf.uni-osnabrueck.de/combinatorial-synergies/">Annual Conference of the SPP2458 “Combinatorial Synergies”</a> in Osnabrück (September 11 - 13, 2024).</li>
-<li><a href="https://www.math.uni-leipzig.de/~sinn/">Rainer Sinn</a> and I are organizing a two-day workshop <a href="https://www.math.uni-leipzig.de/~sinn/wachspress.html">“Wachspress Geometry”</a> at the University of Leipzig (September 24 - 25, 2024).</li>
-</ul>
-<p>I am an active user of the <strong>StackExchange</strong> network. Here are links to my mathematical profiles:</p>
-<ul>
-<li><a href="https://math.stackexchange.com/users/415941">Math.StackExchange</a></li>
-<li><a href="https://mathoverflow.net/users/108884">MathOverflow</a></li>
-</ul>
-<center style="margin-top:2em">
-<a href="https://www.tu.berlin/math"><img src="img/tu_berlin.svg" width="22%"></a> <img width="2.5%"> <a href="https://www.combinatorial-synergies.de"><img src="img/BWM-farbig-typo-schwarz.svg" width="25%"></a> <img width="2.5%"> <a href="https://www.mis.mpg.de/de/"><img src="img/mpi_mis.svg" width="42%"></a>
-</center>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 21, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<style type="text/css">
+    h3 {
+        font-size: 16pt;
+    }
+</style>
+<p>The <strong>Mahler conjecture</strong> asserts that among all centrally symmetric convex bodies <span class="math inline">\(B\)</span> of the cube minimizes the volume product <span class="math inline">\(\operatorname{vol}(B)\cdot\operatorname{vol}(B^\circ)\)</span>. As of today, this is an open problem. A short elegant proof was given for <strong>unconditional convex bodies</strong>, which seems however hard to track down in the literature. The proof was shown to me by <a href="https://www.math.uni-frankfurt.de/~sanyal/">Raman Sanyal</a>, and I want to share it with you in this blog post.</p>
+<hr>
+<section id="mahler-volume-and-mahler-conjecture" class="level3">
+<h3 class="anchored" data-anchor-id="mahler-volume-and-mahler-conjecture">Mahler volume and Mahler conjecture</h3>
+<p>Given a centrally symmetric convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> (which we shall assume means <span class="math inline">\(-B=B\)</span>), Mahler defined the following linearly invariant “notion of volume” – the <strong>Mahler volume</strong>:</p>
+<p><span class="math display">\[
+M(B):=\operatorname{vol}(B)\cdot\operatorname{vol}(B^\circ),
+\]</span></p>
+<p>where <span class="math inline">\(B^\circ:=\{y\in\Bbb R^n\mid \langle x,y\rangle\le 1\text{ for all }x\in B\}\)</span> denotes the polar dual of <span class="math inline">\(B\)</span>. He then conjectured that</p>
+<p><span class="math display">\[M(P)\ge M(\text{$d$-cube}) = \frac{4^d}{d!}.\]</span></p>
+<p>This is known as the <strong>Mahler conjecture</strong>. This problem is excruciatingly hard, and a lot of things have been written on it. <a href="...">Here</a> you can find a blog article by Terry Tao.</p>
+</section>
+<section id="unconditional-bodies-and-unconditional-corners" class="level3">
+<h3 class="anchored" data-anchor-id="unconditional-bodies-and-unconditional-corners">Unconditional bodies and unconditional corners</h3>
+<p>Here I simply want to include a very beautiful and very magic proof of the Mahler conjecture for so-called <strong>coordinate-symmetric</strong> (or <strong>unconditional</strong>) polytopes.</p>
+<p>A convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> is <strong>coordinate-symmetric</strong> if it is invariant under reflection on every coordinate hyperplane <span class="math inline">\(H_i:=\{x_i=0\}\)</span>. <!-- $x=(x_1,...,x_n)\in B$ follows $(\pm x_1,...,\pm x_n)\in B$ as well. Or eq--> This class of convex bodies is in the literature better known as <em>unconditional bodies</em>. I am unsure about the origin of this term, and I tend to dislike it since it is seems the opposite of self-explanatory.</p>
+<p>A <strong>coordinate-symmetric corner</strong> is the restriction of a coordinate symmetric body to the positive orthant <span class="math inline">\(\Bbb R_+:=\{(x_1,...,x_n)\in\Bbb R^n\mid x_i\ge 0\}\)</span>. Since every coordinate-symmetric body consists of <span class="math inline">\(2^n\)</span> coordinate-symmetric corners, one can proof their Mahler conjecture by proving the following:</p>
+<p>The statement of the Mahler conjecture for antiblocking polytopes reduces to</p>
+<p><span class="math display">\[M_+(P_+):=\operatorname{vol}(P_+)\cdot\operatorname{vol}(P_+^*) \ge 1/d!\]</span></p>
+</section>
+<section id="the-mahler-conjecture-for-unconditional-bodies" class="level3">
+<h3 class="anchored" data-anchor-id="the-mahler-conjecture-for-unconditional-bodies">The Mahler Conjecture for unconditional bodies</h3>
+<p>The followin very short and elegant proof is due to … . It was shown to me by Raman Sanyal.</p>
+<p>Let <span class="math inline">\(P_i:=P_+\cap\{x_i=0\}\)</span> and <span class="math inline">\(P_i^*:=P_+^*\cap \{x_i=0\}\)</span>, which are antiblocking. Define vectors <span class="math inline">\(v,v^*\in\Bbb R^d\)</span> by</p>
+<p><span class="math display">\[ v_i := \frac{\operatorname{vol}_{d-1}(P_i)}{d \operatorname{vol}_{d}(P_+)},\quad\; v_i^* := \frac{\operatorname{vol}_{d-1}(P_i^*)}{d \operatorname{vol}_{d}(P_+^*)}\]</span></p>
+<p>For a point <span class="math inline">\(x\in \Bbb R_+^d\)</span> the inner product <span class="math inline">\(\langle x,v\rangle\)</span> evaluates to</p>
+<p><span class="math display">\[
+\langle x,v\rangle
+= \sum_{i=1}^d x_i\frac{\operatorname{vol}_{d-1}(P_i)}{d \operatorname{vol}_d(P_+)}
+= \frac1{\operatorname{vol}_{d}(P_+)} \cdot \sum_{i=1}^d \underbrace{\tfrac1d{x_i \operatorname{vol}_{d-1}(P_i)}}_{\operatorname{vol}_d(C_i)},
+\]</span></p>
+<p>where <span class="math inline">\(C_i\)</span> is the cone with base face <span class="math inline">\(P_i\)</span> and cone point <span class="math inline">\(x\)</span>. If <span class="math inline">\(x\in P_+\)</span> then the cones <span class="math inline">\(C_i\)</span> have disjoint interiors and are contained in <span class="math inline">\(P_+\)</span>. In particular, the sum of their volumes is bounded by <span class="math inline">\(\operatorname{vol}_d(P_+)\)</span>. Therefore <span class="math inline">\(\langle x,v\rangle \le 1\)</span> for all <span class="math inline">\(x\in P_+\)</span>, and hence <span class="math inline">\(v\in P_+^*\)</span>. By an analogous argument holds <span class="math inline">\(v^*\in P_+\)</span>. In particular,</p>
+<p><span class="math display">\[
+\begin{align}
+1\ge &amp;\langle v,v^*\rangle
+=  \sum_{i=1}^d \frac{\operatorname{vol}_{d-1}(P_i)\operatorname{vol}_{d-1}(P_i^*)}{d^2\operatorname{vol}_d(P_+)\operatorname{vol}_d(P_+^*)}
+= \sum_{i=1}^d \frac{M_+(P_i)}{d^2M_+(P_+)}.
+\end{align}
+\]</span></p>
+<p>By rearranging and applying the induction hypothesis <span class="math inline">\(M_+(P_i)\ge 1/(d-1)!\)</span> we conclude</p>
+<p><span class="math display">\[
+M_+(P_+) \ge \frac1{d^2} \sum_{i=1}^d M_+(P_i) \ge \frac1{d^2} \cdot\frac{d}{(d-1)!} = \frac1{d!}.
+\]</span></p>
+<p>This prove was first shown to me by <strong>Raman Sanyal</strong>. But it goes back to [1]. An earlier but much more involved proof can be found in [1].</p>
+<p>From this proof one can also extract the minimizers. We do not include this here. They do however turn out to be exactly the <strong>Hanner corners</strong>.</p>
+</section>
+<section id="antiblocking-bodies" class="level3">
+<h3 class="anchored" data-anchor-id="antiblocking-bodies">Antiblocking bodies</h3>
+<p>A body <span class="math inline">\(B\)</span> is <strong>antiblocking</strong> if its restriction to any orthant is an unconditional corner.</p>
+<p>The Mahler conjecture for those now follows from a simple application of the Cauchy-Schwarz inequality.</p>
+<p>Let <span class="math inline">\(v, v^*\in\Bbb R^{\{0,1\}^n}\)</span> be vectors with entries</p>
+<p><span class="math display">\[
+\begin{align}
+v_\sigma&amp;:=\operatorname{vol}(B\cap \Bbb R^n_\sigma)
+\\
+v_\sigma^*&amp;:=\operatorname{vol}(B^\circ\cap \Bbb R^n_\sigma)
+\end{align}
+\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[
+M(B) = \operatorname{vol}(B)\cdot\operatorname{vol}(B^\circ)=\Big(\sum_\sigma v_\sigma\Big)\cdot\Big(\sum_\sigma v_\sigma^*\Big) \ge \Big(\sum_\sigma \sqrt{v_\sigma v_\sigma^*}\Big)^2 \ge \Big(\frac{2^n}{\sqrt{d!}}\Big)^2 = \frac{4^d}{d!}.
+\]</span></p>
+<p>The locally antiblocking minimizers turn out to be <strong>locally Hanner polytopes</strong>.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-06-21">
+<meta name="dcterms.date" content="2024-07-15">
 
-<title>Two additions to the Mahler conjecture – Martin Winter</title>
+<title>The double kissing problem – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -97,17 +97,6 @@ window.Quarto = {
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
-        <li>
-    <a class="dropdown-item" href="../../wachspress-geometry.html">
- <span class="dropdown-text">Wachspress Geometry</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Research</span></a>
@@ -116,21 +105,10 @@ window.Quarto = {
     <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
-        <li>
-    <a class="dropdown-item" href="../../lecture-rigidity.html">
- <span class="dropdown-text">Lecture "Rigidity Theory for Frameworks and Polytopes"</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../lecture-polytopes.html">
- <span class="dropdown-text">Lecture "Polytope Theory"</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../teaching.html"> 
 <span class="menu-text">Teaching</span></a>
@@ -138,6 +116,10 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
           <div class="quarto-navbar-tools">
@@ -149,7 +131,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Two additions to the Mahler conjecture</h1>
+      <h1 class="title">The double kissing problem</h1>
                       </div>
   </div>
     
@@ -160,7 +142,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 21, 2024</p>
+        <p class="date">July 15, 2024</p>
       </div>
     </div>
     
@@ -179,49 +161,33 @@ window.Quarto = {
 
 
 
-<p>Given a centrally symmetric convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> (which we shall assume means <span class="math inline">\(-B=B\)</span>), Mahler defined the following linearly invariant “notion of volume” – the <strong>Mahler volume</strong>:</p>
-<p><span class="math display">\[
-M(B):=\operatorname{vol}(B)\cdot\operatorname{vol}(B^\circ),
-\]</span></p>
-<p>where <span class="math inline">\(B^\circ:=\{y\in\Bbb R^n\mid \langle x,y\rangle\le 1\text{ for all }x\in B\}\)</span> denotes the polar dual of <span class="math inline">\(B\)</span>. He then conjectured that</p>
-<p><span class="math display">\[M(P)\ge M(\text{$d$-cube}) = \frac{4^d}{d!}.\]</span></p>
-<p>This is known as the <strong>Mahler conjecture</strong>. This problem is excruciatingly hard, and a lot of things have been written on it. <a href="...">Here</a> you can find a blog article by Terry Tao. He states that the problem might be so hard because there is not a single minimizer, but many, and it is hard to imagine a process that converges to exactly those. I am sceptical about this precise phrasing, because the Mahler conjecture has a non-centrallsy symmetric counterpart, which is equially widely open.</p>
-<p>I do not want to repeat what has been written on the conjecture by others. I just want to contribute two smaller details.</p>
-<section id="non-symmetric-mahler-and-self-polar-polytopes" class="level4">
-<h4 class="anchored" data-anchor-id="non-symmetric-mahler-and-self-polar-polytopes">Non-symmetric Mahler and self-polar polytopes</h4>
-<p>The non-symmetric Mahler conjecture has</p>
-</section>
-<section id="mahler-for-coordinate-symmetric-polytopes" class="level4">
-<h4 class="anchored" data-anchor-id="mahler-for-coordinate-symmetric-polytopes">Mahler for coordinate-symmetric polytopes</h4>
-<p>Here I simply want to include a very beautiful and very magic proof of the Mahler conjecture for so-called <strong>coordinate-symmetric</strong> (or <strong>unconditional</strong>) polytopes.</p>
-<p>A convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> is <strong>coordinate-symmetric</strong> if it is invariant under reflection on every coordinate hyperplane <span class="math inline">\(H_i:=\{x_i=0\}\)</span>. <!-- $x=(x_1,...,x_n)\in B$ follows $(\pm x_1,...,\pm x_n)\in B$ as well. Or eq--> This class of convex bodies is in the literature better known as <em>unconditional bodies</em>. I am unsure about the origin of this term, and I tend to dislike it since it is seems the opposite of self-explanatory.</p>
-<p>A <strong>coordinate-symmetric corner</strong> is the restriction of a coordinate symmetric body to the positive orthant <span class="math inline">\(\Bbb R_+:=\{(x_1,...,x_n)\in\Bbb R^n\mid x_i\ge 0\}\)</span>. Since every coordinate-symmetric body consists of <span class="math inline">\(2^n\)</span> coordinate-symmetric corners, one can proof their Mahler conjecture by proving the following:</p>
-<p>The statement of the Mahler conjecture for antiblocking polytopes reduces to</p>
-<p><span class="math display">\[M_+(P_+):=\operatorname{vol}(P_+)\cdot\operatorname{vol}(P_+^*) \ge 1/d!\]</span></p>
-<p>A fairly short inductive proof goes as follows: let <span class="math inline">\(P_i:=P_+\cap\{x_i=0\}\)</span> and <span class="math inline">\(P_i^*:=P_+^*\cap \{x_i=0\}\)</span>, which are antiblocking. Define vectors <span class="math inline">\(v,v^*\in\Bbb R^d\)</span> by</p>
-<p><span class="math display">\[ v_i := \frac{\operatorname{vol}_{d-1}(P_i)}{d \operatorname{vol}_{d}(P_+)},\quad\; v_i^* := \frac{\operatorname{vol}_{d-1}(P_i^*)}{d \operatorname{vol}_{d}(P_+^*)}\]</span></p>
-<p>For a point <span class="math inline">\(x\in \Bbb R_+^d\)</span> the inner product <span class="math inline">\(\langle x,v\rangle\)</span> evaluates to</p>
-<p><span class="math display">\[
-\langle x,v\rangle
-= \sum_{i=1}^d x_i\frac{\operatorname{vol}_{d-1}(P_i)}{d \operatorname{vol}_d(P_+)}
-= \frac1{\operatorname{vol}_{d}(P_+)} \cdot \sum_{i=1}^d \underbrace{\tfrac1d{x_i \operatorname{vol}_{d-1}(P_i)}}_{\operatorname{vol}_d(C_i)},
-\]</span></p>
-<p>where <span class="math inline">\(C_i\)</span> is the cone with base face <span class="math inline">\(P_i\)</span> and cone point <span class="math inline">\(x\)</span>. If <span class="math inline">\(x\in P_+\)</span> then the cones <span class="math inline">\(C_i\)</span> have disjoint interiors and are contained in <span class="math inline">\(P_+\)</span>. In particular, the sum of their volumes is bounded by <span class="math inline">\(\operatorname{vol}_d(P_+)\)</span>. Therefore <span class="math inline">\(\langle x,v\rangle \le 1\)</span> for all <span class="math inline">\(x\in P_+\)</span>, and hence <span class="math inline">\(v\in P_+^*\)</span>. By an analogous argument holds <span class="math inline">\(v^*\in P_+\)</span>. In particular,</p>
-<p><span class="math display">\[
-\begin{align}
-1\ge &amp;\langle v,v^*\rangle
-=  \sum_{i=1}^d \frac{\operatorname{vol}_{d-1}(P_i)\operatorname{vol}_{d-1}(P_i^*)}{d^2\operatorname{vol}_d(P_+)\operatorname{vol}_d(P_+^*)}
-= \sum_{i=1}^d \frac{M_+(P_i)}{d^2M_+(P_+)}.
-\end{align}
-\]</span></p>
-<p>By rearranging and applying the induction hypothesis <span class="math inline">\(M_+(P_i)\ge 1/(d-1)!\)</span> we conclude</p>
-<p><span class="math display">\[
-M_+(P_+) \ge \frac1{d^2} \sum_{i=1}^d M_+(P_i) \ge \frac1{d^2} \cdot\frac{d}{(d-1)!} = \frac1{d!}.
-\]</span></p>
-<p>This prove was first shown to me by <strong>Raman Sanyal</strong>. But it goes back to [1]. An earlier but much more involved proof can be found in [1].</p>
+<p>Famously Isaac Newton and David Gregory disagreed over the maximal number of disjoint unit spheres that can simultaneously touch a central unit sphere. Newton claimed it to be 12, while Gregory thought that a 13-th sphere can fit. It took several centuries to show that Newton was right. Here is your chance to be part of a dispute just like that: make you guess for the <strong>double kissing problem</strong>. <!--Here I present a version of this problem that has the potential for a similar dispute: the **double kissing problem**.--></p>
+<hr class="extend">
+<p>The <a href="https://en.wikipedia.org/wiki/Kissing_number"><strong>kissing number</strong></a> is the maximal number of disjoint (3-dimensional) unit spheres that can touch a common central unit sphere. Today we know the answer is 12. Some optimal solutions have noticable gaps between the outer spheres (see the right figure below) which made people wonder whther a 13-th sphere could fit.</p>
+<p><img class="center" src="kissing_3D.svg" width="46%"></p>
+<p>The <strong>double kissing problem</strong> replaces the central sphere with two spheres:</p>
+<div class="math rem">
+<p><em>Given two touching unit spheres, what is the maximal number of disjoint unit spheres that can be arranged so that each touches <ins>at least one</ins> of the central spheres?</em></p>
+</div>
+<p>It is not hard to come up with an arrangement of 18 spheres by cutting out a part of the fcc lattice (or <em>A</em><sub>3</sub> lattice):</p>
+<p><img class="center" src="double_kissing.svg" width="30%"></p>
+<p>As of writing this article, it seems that a 19-th sphere <em>cannot</em> made fit.</p>
+<p>However, in 2015 Moritz Firsching found that by shrinking the outer spheres by a <em>tiny</em> amount, to a radius of not less than 0.99, we actually can fit a 19-th sphere! Here is an animation of this arrangement based on coordinates provided by him on <a href="https://mathoverflow.net/q/208932/108884">MathOverflow</a>:</p>
+<!--I came however to be pessimistic that there can be a slick argument for this: if we shrink the outer spheres by a tiny amount, to a radius of not more than 0.99, then we actually can fit a 19-th sphere!
+This was observed by Moritz Firsching in a [MathOverflow discussion](https://mathoverflow.net/q/208932/108884) on this problem. 
+Here is an animation of this arrangement based on coordinates provided by him:-->
+<!--<img class="center" src="https://i.sstatic.net/BWLdr.png" width="41%" style="margin-top:1em; margin-bottom:1em;"/>-->
+<p><img class="center" src="anim.gif" width="30%"></p>
+<p>While I am still rooting for double kissing number 18, this 19-sphere arrangement made me pessimistic regarding the existence of a slick argument for this.</p>
+<p>The double kissing problem was initially brought to my attention by <a href="https://warwick.ac.uk/fac/sci/maths/people/staff/florian_theil/">Florian Theil</a>. In his paper <em>“Face-Centered Cubic Crystallization of Atomistic Configurations</em>” with Lisa Flatley they showed that the fcc lattice is (asymptotically) an energy minimizer for suitably chosen 2- and 3-point potentials. 2-point potentials (that is, the energy depends on the distance between pairs of particles) are familiar from the classical electrostatic and gravitation forces. In contrast, 3-point potentials (the energy depends on the distances in <em>triples</em> of particles) struck me as less natural (though Florian explained to me that they are not unphysical). In fact, Flatley and Theil conjecture that the 3-point potentials are actually not necessary for their result. They can prove this conditional on a new Conjecture 2.2, which reads (in my words):</p>
+<div class="math conj">
+<p><strong>Conjecture</strong> (Flatley, Theil, 2015) <br> <em>Given a packing of unit sphere in which each sphere touches <ins>exactly</ins> 12 other spheres, then for any pair of touching spheres there are <ins>at least</ins> four spheres that touch both of them.</em></p>
+</div>
+<p>If the double kissing number were 18, then this would answers their conjecture affirmatively: let <span class="math inline">\(B_0,B_1\)</span> be two touching spheres in an arrangement as in the conjecture, and let <span class="math inline">\(N_i\)</span> be the set of spheres touching <span class="math inline">\(B_i\)</span> (excluding <span class="math inline">\(B_{1-i}\)</span>) then <span class="math inline">\(|N_i|=11\)</span>, <span class="math inline">\(|N_0\cup N_1|\le 18\)</span>, and</p>
+<p><span class="math display">\[|N_0\cap N_1| = |N_0|+|N_1|-|N_0\cup N_1| \ge 11+11-18 = 4.\]</span></p>
+<p>Their Conjecture 2.2 makes much stronger assumptions than the general double kissing problem and might therefore be more accessible. Note that in the animation of the 19-spheres configuration, there is <em>not a single</em> sphere that touches both central spheres. This is possible since the central spheres are not touched by 12 spheres each, but by 11 and 10 other spheres respectively (including the other central sphere).</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

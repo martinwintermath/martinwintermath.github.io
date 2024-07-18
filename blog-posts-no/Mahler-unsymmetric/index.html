@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-06-18">
+<meta name="dcterms.date" content="2024-06-21">
 
-<title>Packing colorings and the mystery threshold 1.264499… – Martin Winter</title>
+<title>The non-symmetric Mahler conjecture and self-polar polytopes – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ window.Quarto = {
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -97,17 +97,6 @@ window.Quarto = {
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
-        <li>
-    <a class="dropdown-item" href="../../wachspress-geometry.html">
- <span class="dropdown-text">Wachspress Geometry</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Research</span></a>
@@ -116,21 +105,10 @@ window.Quarto = {
     <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
-        <li>
-    <a class="dropdown-item" href="../../lecture-rigidity.html">
- <span class="dropdown-text">Lecture "Rigidity Theory for Frameworks and Polytopes"</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../lecture-polytopes.html">
- <span class="dropdown-text">Lecture "Polytope Theory"</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../teaching.html"> 
 <span class="menu-text">Teaching</span></a>
@@ -139,6 +117,10 @@ window.Quarto = {
     <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
           <div class="quarto-navbar-tools">
 </div>
@@ -146,81 +128,96 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Packing colorings and the mystery threshold 1.264499…</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">June 18, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The non-symmetric Mahler conjecture and self-polar polytopes</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 21, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
-<p>In a proper coloring of a graph any two vertices of the same color must be at distance at least two. In a <strong>packing coloring</strong> more general distance constraints can hold. For example, one might ask that any two vertices with the <span class="math inline">\(i\)</span>-th color <span class="math inline">\(c_i\)</span> are at distance <span class="math inline">\(&gt;i\)</span>. Here is a packing coloring of the infinite path <span class="math inline">\(P_\infty\)</span> that is periodic in both directions:</p>
+</header>
+
+
+<p>The <strong>Mahler conjecture</strong> is usually stated for centrally symmetric convex bodies. However, its non-symmetric version seems equally interesting and seemingly intractable. As it turns out, this version has a neat formulation in terms of the volume (<em>not</em> Mahler volume) of self-polar bodies. <span class="math inline">\(\DeclareMathOperator{\vol}{vol}\)</span></p>
+<hr class="extend">
+<p>Given a centrally symmetric convex body <span class="math inline">\(B\subset\Bbb R^d\)</span>, Kurt Mahler defined the following linearly invariant “notion of volume”, now known as the <a href="https://en.wikipedia.org/wiki/Mahler_volume"><strong>Mahler volume</strong></a>:</p>
 <p><span class="math display">\[
-\dots
-\rlap{\color{red}1}\raise{-1pt}\_\,
-\rlap{\color{blue}2}\raise{-1pt}\_\,
-\rlap{\color{red}1}\raise{-1pt}\_\,
-\rlap{\color{ForestGreen}3}\raise{-1pt}\_\,
-\rlap{\color{red}1}\raise{-1pt}\_\,
-\rlap{\color{blue}2}\raise{-1pt}\_\,
-\rlap{\color{red}1}\raise{-1pt}\_\,
-\rlap{\color{ForestGreen}3}\raise{-1pt}\_\,
-\rlap{\color{red}1}\raise{-1pt}\_\,
-\dots
+M(B):=\operatorname{vol}(B)\cdot\operatorname{vol}(B^\circ).
 \]</span></p>
-<p>It is explicitly possible to have different colors with the same distance constraints, so here are two examples of this:</p>
+<p>Here <span class="math inline">\(B^\circ:=\{y\in\Bbb R^d\mid \langle x,y\rangle\le 1\text{ for all }x\in B\}\)</span> denotes the <em>polar dual</em> of <span class="math inline">\(B\)</span>. It has long been known that the Mahler volume is maximized for the sphere (this is known as the <em>Blaschke-Santaló inequality</em>). In contrast, the minimizers seem elusive. It has equally long been conjectured that the cube has the minimal Mahler volume: for every centrally symmetric convex body <span class="math inline">\(B\subset\Bbb R^d\)</span> holds</p>
+<p><span class="math display">\[M(B)\ge M(\text{$d$-cube}) = \frac{4^d}{d!}.\]</span></p>
+<p>This is known as the <strong>Mahler conjecture</strong>, which, as of today, remains open. In his <a href="https://terrytao.wordpress.com/2007/03/08/open-problem-the-mahler-conjecture-on-convex-bodies/">blog post</a> Terrence Tao makes a suggestion for why the conjecture might be so hard:</p>
+<blockquote class="blockquote">
+<p>In my opinion, the main reason why this conjecture is so difficult is that unlike the upper bound, in which there is essentially only one extremiser up to affine transformations (namely the ball), there are many distinct extremisers for the lower bound – not only the cube and the octahedron, but also products of cubes and octahedra, polar bodies of products of cubes and octahedra, products of polar bodies of … well, you get the idea. It is really difficult to conceive of any sort of flow or optimisation procedure which would converge to exactly these bodies and no others […]</p>
+</blockquote>
+<p>(this family of conjectured extremizers he refers to is known as the <a href="https://en.wikipedia.org/wiki/Hanner_polytope">Hanner polytopes</a>)</p>
+<p>There is however an easy way to see that the multitude of minimizers cannot be the true or only reason here: by dropping the assumption of central symmetry we obtain the <strong>non-symmetric Mahler conjecture</strong>. It asserts that the <em>simplex</em> minimizes the Mahler volume among <em>all</em> convex bodies:</p>
+<p><span class="math display">\[M(B)\ge M(\text{$d$-simplex}) = \frac{(d+1)^{d+1}}{(d!)^2}.\]</span></p>
+<p>This conjecture has turned out equally intractable. Yet, since we expect the simplex to be the <em>unique</em> minimizer, Terry’s explanation cannot apply.</p>
+<p>We briefly addres an important technicality with the non-symmetric version: computing the Mahler volume requires computing the polar body, which is not a translation invariant construction. If <span class="math inline">\(B\)</span> is centrally symmetric, there is a preferred choice of origin (the symmetry center). For a general body there is no such preferred choice and computing the Mahler volume requires fixing the bodies location relative to the origin. However, there exists a unique point <span class="math inline">\(x\in P\)</span> (the <em>Sataló point</em>) that, if chosen as the origin, minimizes the Mahler volume.</p>
+<section id="a-formulation-in-terms-of-self-polar-bodies" class="level3">
+<h3 class="anchored" data-anchor-id="a-formulation-in-terms-of-self-polar-bodies">A formulation in terms of self-polar bodies</h3>
+<p>The goal here is to reformulate the non-symmetric Mahler conjecture in terms of volumes of self-polar bodies, thereby avoiding volume products entirely.</p>
+<!-- > **Conjecture.** The simplex has the smallest volume among all self-polar polytopes.-->
+<p>A convex body <span class="math inline">\(B\)</span> is <strong>self-polar</strong> if <span class="math inline">\(B\)</span> and <span class="math inline">\(B^\circ\)</span> are isometric (or equivalently, related by an orthogonal transformation). An example is the unit ball; not however a ball of any other radius: if <span class="math inline">\(B\)</span> is a ball of radius <span class="math inline">\(r\)</span> then <span class="math inline">\(B^\circ\)</span> has radius <span class="math inline">\(1/r\)</span>, which is non-isometric to <span class="math inline">\(B\)</span>. We see that self-polarity cares about scale. Another example is a simplex, if chosen of a suitable shape and scale. In this case <span class="math inline">\(B=-B^\circ\)</span>.</p>
+<p>The following conjecture is equivalent to the non-symmetric Mahler conjecture:</p>
+<div class="math conj">
+<p><strong>Conjecture.</strong> <br> <em>The simplex has the smallest volume among all self-polar bodies.</em></p>
+</div>
+<p>One direction of the equivalence is straight-forward: if <span class="math inline">\(B\)</span> is self-polar, then</p>
+<p><span class="math display">\[\llap{(*)\qquad}M(B)=\vol(B)\cdot\vol(B^\circ)=\vol(B)^2.\]</span></p>
+<p>Hence, if simplices minimizes <span class="math inline">\(M(\,\cdot\,)\)</span>, then since they are also self-polar, <span class="math inline">\((*)\)</span> simplices also minimize <span class="math inline">\(\vol(\,\cdot\,)\)</span> among all self-polar bodies.</p>
+<p>For the other direction we need to recall the <strong>join operation</strong> <span class="math inline">\(B_1\star B_2\)</span>, and the following properties:</p>
+<ul>
+<li><p>if <span class="math inline">\(B_1,B_2\)</span> are of dimension <span class="math inline">\(d_1,d_2\)</span> respectively, then <span class="math inline">\(B_1\star B_2\)</span> is of dimension <span class="math inline">\(d_1+d_2+1\)</span>.</p></li>
+<li><p>we can explicitle compute the volume of joins: <span class="math display">\[\vol(B_1\star B_2) = c(d_1,d_2)\cdot \vol(B_1)\cdot\vol(B_2),\]</span>where <span class="math inline">\(c(d_1,d_2)\)</span> depends on the dimensions of the bodies, but not on the bodies themselves.</p></li>
+<li><p>joins commute with the polar dual operation: <span class="math inline">\((B_1\star B_2)^\circ = B_1^\circ\star B_2^\circ\)</span>. In particular, <span class="math inline">\(B\star B^\circ\)</span> is always a self-polar body!</p></li>
+<li><p>joins of simplices yield simplices: <span class="math inline">\(\Delta_{d_1}\star\Delta_{d_2} = \Delta_{d_1+d_2+1}\)</span>. Moreover, if we start from simplices in their self-polar realization of minimal volume, the join is also a self-polar simplex in self-polar realization of minimal volume.</p></li>
+</ul>
+<p>Formulating these properties precisely requires some more care and a carefully chosen geometric realization of the join. See my previous <a href="blog-posts/join/join.qmd">blog entry</a> on the join for the details.</p>
+<p>Suppose then that <span class="math inline">\(P\)</span> is a counterexample to the non-symmetric Mahler conjecture, that is, <span class="math inline">\(M(P)&lt;M(\Delta_d)\)</span>. Then <span class="math inline">\(P\star P^\circ\)</span> is a self-polar polytope with</p>
 <p><span class="math display">\[
-\dots
-\rlap{\color{red}1}\raise{-1pt}\_\,
-\rlap{\color{blue}1}\raise{-1pt}\_\,
-\rlap{\color{red}1}\raise{-1pt}\_\,
-\rlap{\color{blue}1}\raise{-1pt}\_\,
-\rlap{\color{red}1}\raise{-1pt}\_\,
-\rlap{\color{blue}1}\raise{-1pt}\_\,
-\dots
-\qquad
-\dots
-\rlap{\color{red}2}\raise{-1pt}\_\,
-\rlap{\color{blue}2}\raise{-1pt}\_\,
-\rlap{\color{ForestGreen}2}\raise{-1pt}\_\,
-\rlap{\color{red}2}\raise{-1pt}\_\,
-\rlap{\color{blue}2}\raise{-1pt}\_\,
-\rlap{\color{ForestGreen}2}\raise{-1pt}\_\,
-\dots
+\begin{align}
+\vol(P\star P^\circ) &amp;= c\cdot \vol(P)\cdot \vol(P^\circ)
+\\ &amp;= c\cdot M(P)
+\\ &amp;&lt; c \cdot M(\Delta_d)
+\\ &amp;= c \cdot \vol(\Delta_d)\cdot\vol(\Delta_d^\circ)
+\\ &amp;= c \cdot \vol(\Delta_d)\cdot\vol(\Delta_d)
+\\ &amp;= \vol(\Delta_d\star\Delta_d)
+= \vol(\Delta_{2d+1}).
+\end{align}
 \]</span></p>
-<p>For a general packing coloring we fix a <em>pallette</em> <span class="math inline">\(\boldsymbol c\)</span>, that is, a finite or infinite sequence <span class="math inline">\(c_1\le c_2\le c_3\le\dots\)</span> of natural numbers (which we call <em>colors</em>). We say that a graph <span class="math inline">\(G\)</span> has a (packing) coloring using the pallette <span class="math inline">\(\boldsymbol c\)</span> if it can be colored using finitely many of the colors, so that any two vertices of color <span class="math inline">\(c_i\)</span> have distance <span class="math inline">\(&gt;c_i\)</span>.</p>
-<p>Note that a color <span class="math inline">\(c_i\)</span> can appear at most at every <span class="math inline">\((c_i+1)\)</span>-th vertex, hence, can have an asymptotic density of at most <span class="math inline">\((c_i+1)^{-1}\)</span>. We define the <em>density</em> of a pallette to be:</p>
-<p><span class="math display">\[\delta(\boldsymbol c) := \sum_i \frac1{c_i+1}.\]</span></p>
-<p>Since a proper packing coloring has asymptotic density exactly 1, we see that <span class="math inline">\(\delta(\boldsymbol c)&lt;1\)</span> implies that <span class="math inline">\(\boldsymbol c\)</span> does <em>not</em> packing color.</p>
-<p>If <span class="math inline">\(\delta(\boldsymbol c)&lt;1\)</span>, the pallette cannot color. In contrast, if <span class="math inline">\(\delta(\boldsymbol c)&gt;2\)</span>, then the pallette does color. Somewhere in between there is a number <span class="math inline">\(\zeta\)</span> so that whenever <span class="math inline">\(\delta(\boldsymbol c)&gt;\zeta\)</span>, then <span class="math inline">\(\boldsymbol c\)</span> colors. We conjecture</p>
-<p><span class="math display">\[\zeta=\sum_{i=1}^{\infty} \frac1{2^i+1} \approx 1.264499...\;.\]</span></p>
+<p>that is, a counterexample to Conjecture A. Conversely, Conjecture A implies the non-symmetric Mahler conjecture.</p>
+<p>Conversely, suppose that <span class="math inline">\(P\)</span> is a self-polar polytope with <span class="math inline">\(\vol(P)&lt;\vol(\Delta_d)\)</span>. Then</p>
+<p><span class="math display">\[M(B)=\vol(B)\cdot\vol(B^\circ)=\vol(B)^2 \ge \vol(\Delta_d)^2=\vol(\Delta_d)\cdot\vol(\Delta_d^\circ) = M(\Delta_d),\]</span></p>
+<p>which is a counterexample to the non-symmetric Mahler conjecture.</p>
+<p>Self-polar polytopes are not very well understood. For example, it is unknown whether every self-dual polytope has a self-polar realization.</p>
+<p>Finally, I am not aware of an analogous formulation for the symmetric Mahler conjecture. Of course, one could ask for the smallest volume of a convex body of the form <span class="math inline">\(B*B^\circ\)</span>, whether <span class="math inline">\(B\)</span> is centrally symmetric. This however feels not like a significant reformulation and does not have the charme of a natural problem on its own.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -642,8 +639,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="MathWinter/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 

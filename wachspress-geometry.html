@@ -67,17 +67,6 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
-        <li>
-    <a class="dropdown-item" href="./wachspress-geometry.html">
- <span class="dropdown-text">Wachspress Geometry</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="./research.html"> 
 <span class="menu-text">Research</span></a>
@@ -86,21 +75,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
-        <li>
-    <a class="dropdown-item" href="./lecture-rigidity.html">
- <span class="dropdown-text">Lecture "Rigidity Theory for Frameworks and Polytopes"</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./lecture-polytopes.html">
- <span class="dropdown-text">Lecture "Polytope Theory"</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="./teaching.html"> 
 <span class="menu-text">Teaching</span></a>
@@ -108,6 +86,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./cv.html"> 
 <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
           <div class="quarto-navbar-tools">
@@ -142,25 +124,71 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Wachspress Geometry</strong> is a young subject in the intersection of geometry, combinatorics and algebra, and at the core of my DFG grant <em>“Wachspress Coordinates - a Bridge betwen Algebra, Geometry and Combinatorics”</em>.</p>
-<p>Wachspress Geometry has a dual nature:</p>
+<p><strong>Wachspress Geometry</strong> is a young subject in the intersection of geometry, combinatorics and algebra. It is at the core of my DFG grant <em>“Wachspress Coordinates – a bridge betwen Algebra, Geometry and Combinatorics”</em>.</p>
+<p>Wachspress Geometry has a dual focus. It is …</p>
 <ul>
-<li>it is the study of the so-called Wachspress objects, a family of constructions on convex polytopes.</li>
-<li>it is one of the best understood instance of Positive Geometry.</li>
+<li>… the study of the <strong>Wachspress objects</strong>, a somewhat mysterious family of constructions on convex polytopes. Those emerge in a wide range of seemingly unrelated contexts, and the goal is to explain and exploit these connections and to work towards a unifying explanation for the ubiquity of “Wachspress phenomena”.</li>
+<li>… among the best understood instances of <strong>Positive Geometry</strong>. The goal is to extend tools of Wachspress Geometry to more general positive geometries.</li>
 </ul>
-<p><span class="comingsoon">more coming soon</span></p>
+<p>Maybe you have already come across some construction from Wachspress Geometry, whether in the shape of a canonical form, a stress in a framework, a model in algebraic statistics, cone volumes or volume differentials.</p>
+<p>Below I will write an introduction to Wachspress Geometry, coming soon …</p>
+<p><!--Below I give a brief introduction to some of Wachspress objects that are most central to my research, and some typical questions that I plan to study about them.--></p>
+<p>If you are interested, Rainer Sinn and I are organizing a workshop <a href="https://www.math.uni-leipzig.de/~sinn/wachspress.html">“Wachspress Geometry”</a> in Leipzig on September 24th/25th 2024.</p>
+<p><span class="comingsoon">more coming soon …</span></p>
 <!--
-## The many faces of Wachspress Geometry ##
 
-### From algebraic geometry ###
+### Generalized barycentric coordinates ###
 
-### From convex geometry ###
+Let $P\subset\Bbb R^d$ be a convex polytope with vertices $p_1,...,p_n\in\Bbb R^d$.
+Then each point $x\in P$ can be expressed as a *convex combination* of the polytope's vertice, that is,
 
-### From cone volumes ###
+$$x = \sum_i \alpha_i p_i,\quad \text{where $\alpha_i\ge 0$ and $\alpha_1+\dots+\alpha_n=1$}.$$
 
-### From spectral graph theory ###
+The $\alpha\in\Bbb R^n$ are also called *convex coefficients*. 
 
-### From rigidity theory ###
+If $P$ is a simplex then for each $x\in P$ there is a unique choice for the convex coefficients.
+These are known as *barycentric coordinates*.
+They have an immense use for interpolation have widespread applications in geometric modelling, finite element analysis etc.
+
+If $P$ is not a simplex, there is usually more than one way to choose convex coefficients. 
+For many applications it is however desirable to have a canonical choice across all points of $P$, that is, a function $\alpha:P\to\Delta_n$ that satisfies *linear precision*:
+
+$$\sum_i \alpha_i(x) p_i = x,\quad\text{for all $x\in P$}.$$
+
+Here $\Delta_n:=\{\alpha\in\Bbb R^n_+\mid \alpha_1+\cdots+\alpha_n=1\}$ is the *standard simplex* or "space of convex coefficients".
+Any such choice is called a system of **generalized barycentric coordinates** (or GBCs).
+Many such GBCs have been conceived for various application. One of them being the **Wachspress coordinates**, one of the first Wachspress objects.
+
+
+
+### Wachspress coordinates ###
+
+**Wachspress coordinates** are a particular systems of generalized barcentric coordinates that exist for every convex polytope. 
+Wachspress coordinates do not have *the* preferred definition. 
+In fact, the real value for Wachspress Geometry lies in their many seemingly unrelated definitions that touch on a variety of subjects.
+We present some of them below.
+
+##### Via cone volumes #####
+
+...
+
+##### As rational GBCs #####
+
+The usual barycentric coodinates on simplices are linear function.
+A natural choice for generalizations would then be polynomials. 
+However, already Wachspress showed that polynomial GBCs do not exist for most polytopes.
+
+Wachspress coordinates are the next best option: they are *rational GBCs*.
+
+$$\alpha_i(x) = \frac{\mathrm p_i(x)}{\mathrm q(x)},\quad \text{where $\mathrm q(x)=\sum_i\mathrm p_i(x)$}.$$
+
+<div class="math thm">
+**Theorem.** (Warren, 19??)
+<br>
+*Wachspress coordinates are the <ind>unique</ind> rational GBCs of lowest possible degree.* 
+</div>
+
+
 
 -->
 

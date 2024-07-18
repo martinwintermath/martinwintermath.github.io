@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-06-21">
+<meta name="dcterms.date" content="2024-07-16">
 
-<title>Inscribed zonotopes – Martin Winter</title>
+<title>Finetuning the geometric join – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ window.Quarto = {
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -97,17 +97,6 @@ window.Quarto = {
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
-        <li>
-    <a class="dropdown-item" href="../../wachspress-geometry.html">
- <span class="dropdown-text">Wachspress Geometry</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Research</span></a>
@@ -116,21 +105,10 @@ window.Quarto = {
     <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
-        <li>
-    <a class="dropdown-item" href="../../lecture-rigidity.html">
- <span class="dropdown-text">Lecture "Rigidity Theory for Frameworks and Polytopes"</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../lecture-polytopes.html">
- <span class="dropdown-text">Lecture "Polytope Theory"</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../teaching.html"> 
 <span class="menu-text">Teaching</span></a>
@@ -139,6 +117,10 @@ window.Quarto = {
     <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
           <div class="quarto-navbar-tools">
 </div>
@@ -146,51 +128,92 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Inscribed zonotopes</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">June 21, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Finetuning the geometric join</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 16, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
-<p>Recall that a <strong>zonotope</strong> is a polytope all whose faces are centrally symmetric. Equivalently (though not trivially so) zonotopes can be defined as Minkowski sums of line segments.</p>
-<p>A polytope is <strong>inscribed</strong> if all its vertices lie on a sphere.</p>
-<p>Both zonotopes and inscribed polytopes are abundant, but it turns out that asking for both at the same time is surprisingly restrictive. In fact, only 17 are known in dimension three (+ an infinite family of prisms), yet we can’t even show that there are finitely many (ignoring the prisms). But let’s move slowly.</p>
-<p>Some examples come to mind easily: the cube, prisms, and perhaps even the <em>permutahedron</em>. All those actually share a property much stronger than being inscribed: they are <strong>vertex-transitive</strong>, that is, their orthogonal symmetry group acts transitively on the vertices.</p>
-<p>…</p>
-<p>In [1] I showed the vertex those are exactly the <span class="math inline">\(\Gamma\)</span>-permutahedra, where <span class="math inline">\(\Gamma\)</span> is a finite reflection group.</p>
-<p>A vertex-transitive zonotope might have realizations that are inscribed but not vertex-transitive. For example, the <span class="math inline">\(A_3\)</span>-zonotope can be realized as an inscribed zonotope with any of the following generators:</p>
-<p><span class="math display">\[\alpha_i\alpha_j (\alpha_i e_j-\alpha_j e_i)\]</span></p>
-<p>In contrast, the <span class="math inline">\(H_3\)</span>-zonotope can be realized as an inscribed zonotope in <em>exactly</em> one way, which is then vertex-transitive.</p>
-<p>Sanyal and Manecke noted that the projection of an isncribed zonotope along an edge direction yields again an inscribed zonotope. Starting from higher-dimensional <span class="math inline">\(\Gamma\)</span>-permutahedra this gives rise to many inscribed zonotopes of new combinatorial types. I like to call them <strong>quasi-permutahedra</strong>. All in all they found 17 combinatorial types for which they generated the graphics below.</p>
-<p>They also gave the following diagram showing the realtios between the different quasi-permutahedra.</p>
-<p>It should be noted that all inscribed zonotopes are simple, that is, their graph is regular and the degree is exactly the dimension. As such, the hyperplane arrangement that corresponds the the zonotope (i.e.&nbsp;the arrangement whose normal vectors are the edge directions) is <em>simplicial</em>. Simplicial hyperplane arrangements are a beast on their own and form their own exclusive club. The “trivial” examples are the reflection arrangements. The most up-to-date list in dimension three is due to Grünbaum and Cuntz and list 93 arrangements + 3 infinite families. Sanyal and Manecke verified that only the quasi-reflection arrangements (the ones obtained by restriction of a reflection arrangements to a hyperplane) lead to inscribed zonotopes (on the way they verified that all the known arrangements are projectively unique!). They did however find that some arrangements lead to strange “zonotope-like” objects that are inscribed not in a sphere, but a different quadric!</p>
+</header>
+
+
+<p>The <strong>join</strong> is a well-known operation on topological spaces, simplicial complexes, convex sets and polytopes. For the latter, mostly combinatorial properties are discussed. We take some time to look at the right geometric realization of joins – the <strong>geometric join</strong>. This article is in preparation for an upcoming article on the non-symmetric Mahler conjecture. <span class="math inline">\(\DeclareMathOperator{\vol}{vol}\)</span></p>
+<hr class="extend">
+<p>Let’s fix parameter <span class="math inline">\(x_1,x_2,c_1,c_2\in\Bbb R\)</span>. For convex sets <span class="math inline">\(B_1\subset\Bbb R^{d_1}\)</span> and <span class="math inline">\(B_2\subset\Bbb R^{d_2}\)</span> we write <span class="math inline">\(B_1 \star B_2 \subset \Bbb R^{d_1}\times\Bbb R^{d_2}\times\Bbb R\cong \Bbb R^{d_1+d_2+1}\)</span> for the result of the following construction:</p>
+<ol type="1">
+<li><p>consider <span class="math inline">\(\Bbb R^{d_1+d_2+1}=\operatorname{span}\{e_0;e_1^1,...,e_{d_1}^1;e_1^2,...,e_{d_2}^2\}\)</span> and define the following affine subspaces: <!--$$
+\begin{align}
+H_1&=x_1 e_0 + \operatorname{span}\{e_1^2,...,e_{d_1}^2\},
+\\
+H_2&=x_2 e_0 + \operatorname{span}\{e_{1}^2,...,e_{d_2}^2\}.
+\end{align}
+$$--> <span class="math display">\[
+H_i=x_i e_0 + \operatorname{span}\{e_{1}^i,...,e_{d_2}^i\}.
+\]</span></p></li>
+<li><p>embed <span class="math inline">\(c_i B_i\)</span> into <span class="math inline">\(H_i\)</span> with the origin mapped to <span class="math inline">\(x_i e_0\)</span>.</p></li>
+<li><p>the convex hull of both embedded sets is the result of the operation.</p></li>
+</ol>
+<p>The other direction requires some preparation. Let <span class="math inline">\(B_1\star B_2 \subset\Bbb R^{2d+1}\)</span> denote the <em>join</em> of convex bodies <span class="math inline">\(B_1,B_2\subset\Bbb R^d\)</span>. For our purpose we need that the join is constructed geometrically as follows: first we embed the <span class="math inline">\(B_i\)</span> into two specific <span class="math inline">\(d\)</span>-dimensional affine subspaces of <span class="math inline">\(\Bbb R^{2d+1}\)</span>:</p>
+<p><span class="math display">\[
+\begin{align}
+H_1 &amp;= -e_0 + \operatorname{span}\{e_1,...,e_d\},
+\\
+H_2 &amp;= \phantom+ e_0 + \operatorname{span}\{e_{d+1},...,e_{2d}\},
+\end{align}
+\]</span></p>
+<p>so that the origin in <span class="math inline">\(B_i\)</span> is mapped to <span class="math inline">\(\pm e_0\)</span> respectively. The join <span class="math inline">\(B_1\star B_2\)</span> is then the convex hull of the embedded sets.</p>
+<p>We make three obsevations.</p>
+<p><strong>(1) Volume</strong></p>
+<p>The volume of <span class="math inline">\(B_1\star B_2\)</span> can be computed as as follows: the section of <span class="math inline">\(B_1\star B_2\)</span> with the hyperplane <span class="math inline">\(e_0^\bot + se_0, s\in[-1,1]\)</span> is of the form <span class="math inline">\(t B_1\times (1-t) B_2\)</span> with <span class="math inline">\(t=\frac12(s+1)\in[0,1]\)</span>. Thus</p>
+<p><span class="math display">\[
+\begin{align}
+\vol(B_1\star B_2)
+    &amp;= \phantom 2\!\int_{-1}^1 \!\!\vol\big((B_1\star B_2) \cap (e_0^\bot+ s e_0)\big) \,\mathrm ds
+\\ &amp;= 2\! \int_0^1 \!\!\vol(t B_1\times (1-t) B_2) \,\mathrm dt
+\\ &amp;= \vol(B_1)\cdot \vol(B_2) \cdot \underbrace{2\!\int_0^1 \!\!t(1-t) \,\mathrm dt}_{=: c}.
+    = c\cdot \vol(B_1)\cdot\vol(B_2).
+\end{align}
+\]</span></p>
+<p><strong>(2) Polarity</strong></p>
+<p>The specific gemetric realization of the join chosen here commutes with polarity: <span class="math display">\[(B_1\star B_2)^\circ=B_1^\circ\star B_2^\circ.\]</span> In particular, <span class="math inline">\(B\star B^\circ\)</span> is self-polar!</p>
+<p><strong>(2) Simplices</strong></p>
+<p>Simplices are closed under the join operation. If <span class="math inline">\(\Delta_d\)</span> denotes a <span class="math inline">\(d\)</span>-dimensional simplex, then</p>
+<p><span class="math display">\[\Delta_d\star\Delta_e \simeq \Delta_{d+e+1}.\]</span></p>
+<hr>
+<p><span class="math inline">\(s=(1-t)a+tb = a + (b-a)t\)</span>.</p>
+<p><span class="math display">\[
+\begin{align}
+\vol(A\star B)
+    &amp;= \int_a^b \!\vol\!\big((A\star B)\cap H_s\big) \,\mathrm ds
+  \\&amp;= (b-a)\cdot \int_0^1 \!\vol\!\big((1-t)\alpha A+t \beta B\big) \,\mathrm dt
+  \rlap{\quad \text{\small\color{lightgray} (using $\tfrac{\mathrm ds}{\mathrm dt}=b-a$)}}
+  \\&amp;= (b-a) \cdot\alpha^{d_A}\beta^{d_B} \cdot\vol(A)\cdot\vol(B)\cdot \int_0^1 (1-t)^{d_A}t^{d_B} \,\mathrm dt
+  \\&amp;= \underbrace{\alpha^{d_A}\beta^{d_B}\cdot(b-a)\cdot\frac{(d_A+1)!(d_B+1)!}{(d_A+d_B+1)!}}_{=:\,K(a,b;\alpha,\beta;d_A,d_B)} \cdot\vol(A)\cdot\vol(B).
+\end{align}
+\]</span></p>
 
 
 
@@ -614,8 +637,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<script src="https://utteranc.es/client.js" repo="MathWinter/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
