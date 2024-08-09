@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blog-posts/Mahler-unconditional/index.html",
       "/blog-posts/double-kissing-problem/index.html"
     ]
   }

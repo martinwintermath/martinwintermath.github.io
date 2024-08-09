@@ -15,7 +15,6 @@ div.math {
     margin-right: -0.7em;
     margin-bottom: 1rem;
 }
-
 div.math > p {
     margin: 0;
 }
@@ -31,6 +30,22 @@ div.def {
 }
 div.rem {
     border-left: 4px solid #b1b1b1;
+}
+
+div.abstract {
+    border: 6px solid #e8e8e8;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.7em; 
+    padding-right: 0.7em;
+    margin-left: -0.7em;
+    margin-right: -0.7em;
+    margin-top: -1rem;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+div.abstract > p {
+    margin: 0;
 }
 
 hr.extend {

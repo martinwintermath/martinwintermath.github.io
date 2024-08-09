@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-07-15">
+<meta name="dcterms.date" content="2024-08-08">
 
-<title>The double kissing problem – Martin Winter</title>
+<title>The Mahler conjecture for coordinate symmetric bodies – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,7 +136,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">The double kissing problem</h1>
+      <h1 class="title">The Mahler conjecture for coordinate symmetric bodies</h1>
                       </div>
   </div>
     
@@ -147,7 +147,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 15, 2024</p>
+        <p class="date">August 8, 2024</p>
       </div>
     </div>
     
@@ -167,33 +167,88 @@ window.Quarto = {
 
 
 <div class="abstract">
-<p>Famously Isaac Newton and David Gregory disagreed over the maximal number of disjoint unit spheres that can simultaneously touch a central unit sphere. Newton claimed it to be 12, while Gregory thought that a 13-th sphere can fit. It took several centuries to show that Newton was right. Here is your chance to be part of a dispute just like that: make your guess for the <strong>double kissing problem</strong>.</p>
+<p>The <strong>Mahler conjecture</strong> asserts that among all centrally symmetric convex bodies <span class="math inline">\(B\)</span> the cube minimizes the volume product <span class="math inline">\(\operatorname{vol}(B)\operatorname{vol}(B^\circ)\)</span>. While famously open, several proofs have been discovered for the special case of <strong>coordinate symmetric bodies</strong>. I want to share here a very short and elegant proof by Mathieu Meyer that seems otherwise unavailable in the English litrature. <span class="math inline">\(\DeclareMathOperator{\vol}{vol}\)</span></p>
 </div>
-<p>The <a href="https://en.wikipedia.org/wiki/Kissing_number"><strong>kissing number</strong></a> is the maximal number of disjoint (3-dimensional) unit spheres that can touch a common central unit sphere. Today we know the answer is 12. Some optimal solutions have noticable gaps between the outer spheres (see the right figure below) which made people wonder whther a 13-th sphere could fit.</p>
-<p><img class="center" src="kissing_3D.svg" width="46%"></p>
-<p>The <strong>double kissing problem</strong> replaces the central sphere with two spheres:</p>
-<div class="math rem">
-<p><em>Given two touching unit spheres, what is the maximal number of disjoint unit spheres that can be arranged so that each touches <ins>at least one</ins> of the central spheres?</em></p>
-</div>
-<p>It is not hard to come up with an arrangement of 18 spheres by cutting out a part of the fcc lattice (or <em>A</em><sub>3</sub> lattice):</p>
-<p><img class="center" src="double_kissing.svg" width="30%"></p>
-<p>As of writing this article, it seems that a 19-th sphere <em>cannot</em> made fit.</p>
-<p>However, in 2015 Moritz Firsching found that by shrinking the outer spheres by a <em>tiny</em> amount, to a radius of not less than 0.99, we actually can fit a 19-th sphere! Here is an animation of this arrangement based on coordinates provided by him on <a href="https://mathoverflow.net/q/208932/108884">MathOverflow</a>:</p>
-<!--I came however to be pessimistic that there can be a slick argument for this: if we shrink the outer spheres by a tiny amount, to a radius of not more than 0.99, then we actually can fit a 19-th sphere!
-This was observed by Moritz Firsching in a [MathOverflow discussion](https://mathoverflow.net/q/208932/108884) on this problem. 
-Here is an animation of this arrangement based on coordinates provided by him:-->
-<!--<img class="center" src="https://i.sstatic.net/BWLdr.png" width="41%" style="margin-top:1em; margin-bottom:1em;"/>-->
-<p><img class="center" src="anim.gif" width="30%"></p>
-<p>While I am still rooting for double kissing number 18, this 19-sphere arrangement made me pessimistic regarding the existence of a slick argument for this.</p>
-<p>The double kissing problem was initially brought to my attention by <a href="https://warwick.ac.uk/fac/sci/maths/people/staff/florian_theil/">Florian Theil</a>. In his paper <em>“Face-Centered Cubic Crystallization of Atomistic Configurations</em>” with Lisa Flatley they showed that the fcc lattice is (asymptotically) an energy minimizer for suitably chosen 2- and 3-point potentials. 2-point potentials (that is, the energy depends on the distance between pairs of particles) are familiar from the classical electrostatic and gravitation forces. In contrast, 3-point potentials (the energy depends on the distances in <em>triples</em> of particles) struck me as less natural (though Florian explained to me that they are not unphysical). In fact, Flatley and Theil conjecture that the 3-point potentials are actually not necessary for their result. They can prove this conditional on a new Conjecture 2.2, which reads (in my words):</p>
+<!--### Mahler volume and Mahler conjecture ###-->
+<p>Let <span class="math inline">\(B\subset\Bbb R^n\)</span> be a centrally symmetric convex body, where we shall assume <span class="math inline">\(-B=B\)</span>. Kurt Mahler defined the following linearly invariant notion of volume now known as <strong>Mahler volume</strong>:</p>
+<p><span class="math display">\[
+M(B):=\operatorname{vol}(B)\operatorname{vol}(B^\circ).
+\]</span></p>
+<p>Here <span class="math inline">\(B^\circ:=\{y\in\Bbb R^n\mid \langle x,y\rangle\le 1\text{ for all }x\in B\}\)</span> denotes the polar dual of <span class="math inline">\(B\)</span>. It has long been known that the Mahler volume attains a maximum for the sphere. There are also clear ideas for what might minimize the Mahler volume, but a proof remains elusive. This is the infamous <em>Mahler conjecture</em>, which remains open to this day:</p>
 <div class="math conj">
-<p><strong>Conjecture</strong> (Flatley, Theil, 2015) <br> <em>Given a packing of unit sphere in which each sphere touches <ins>exactly</ins> 12 other spheres, then for any pair of touching spheres there are <ins>at least</ins> four spheres that touch both of them.</em></p>
+<p><strong>Mahler conjecture.</strong> <br> <em>For each centrally symmetric convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> holds</em> <span class="math display">\[M(B)\ge M(\text{$n$-cube}) = \smash{\frac{4^n}{n!}}.\]</span></p>
 </div>
-<p>If the double kissing number were 18, then this would answers their conjecture affirmatively: let <span class="math inline">\(B_0,B_1\)</span> be two touching spheres in an arrangement as in the conjecture, and let <span class="math inline">\(N_i\)</span> be the set of spheres touching <span class="math inline">\(B_i\)</span> (excluding <span class="math inline">\(B_{1-i}\)</span>) then <span class="math inline">\(|N_i|=11\)</span>, <span class="math inline">\(|N_0\cup N_1|\le 18\)</span>, and</p>
-<p><span class="math display">\[|N_0\cap N_1| = |N_0|+|N_1|-|N_0\cup N_1| \ge 11+11-18 = 4.\]</span></p>
-<p>Their Conjecture 2.2 makes much stronger assumptions than the general double kissing problem and might therefore be more accessible. Note that in the animation of the 19-spheres configuration, there is <em>not a single</em> sphere that touches both central spheres. This is possible since the central spheres are not touched by 12 spheres each, but by 11 and 10 other spheres respectively (including the other central sphere).</p>
+<p>Below I share a very elegant proof for the special case of <em>coordinate symmetric bodies</em> that, I believe, is not available in the English literature elsewhere. For some general background on the Mahler conjecture as well as its status, check out the <a href="https://en.wikipedia.org/wiki/Mahler_volume">Wikipedia article</a> and <a href="https://terrytao.wordpress.com/2007/03/08/open-problem-the-mahler-conjecture-on-convex-bodies/">Terry Tao’s blog entry</a> on the topic.</p>
+<section id="coordinate-symmetric-bodies-and-convex-corners" class="level4">
+<h4 class="anchored" data-anchor-id="coordinate-symmetric-bodies-and-convex-corners">Coordinate symmetric bodies and convex corners</h4>
+<p>A convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> is <strong>coordinate symmetric</strong> if it is invariant under reflection on each coordinate hyperplane <span class="math inline">\(H_i:=\{x_i=0\}\)</span>. Clearly, coordinate symmetric bodies are centrally symmetric and closed under polarity. <!-- $x=(x_1,...,x_n)\in B$ follows $(\pm x_1,...,\pm x_n)\in B$ as well. Or eq--> <!--This class of convex bodies is in the literature better known as *unconditional bodies*.
+I am unsure about the origin of this term, and I tend to dislike it since it is seems the opposite of self-explanatory.--></p>
+<p><img class="center" src="symmetric.svg" width="50%"></p>
+<p>In the literature these bodies are often called “unconditional bodies”, a term going back to “unconditional convergence” mostly used in Banach space theory. For geometric (that is, finite-dimensional) discussions I prefer to go with the more visually inspired term “coordinate symmetric”.</p>
+<p>A coordinate symmetric body <span class="math inline">\(B\)</span> is clearly determined by its restriction <span class="math inline">\(B_+:=B\cap\Bbb R^n_+\)</span> to the positive orthant <span class="math inline">\(\Bbb R_+^n:=\{x_i\ge 0\}\)</span>. A set <span class="math inline">\(B_+\subset\Bbb R^n_+\)</span> that can be written as such a restriction of a coordinate symmetric body is called a <strong>convex corner</strong> (also known as an <em>anti-blocking body</em>).</p>
+<p><img class="center" src="corners.svg" width="95%" style="margin-top:1ex; margin-bottom:1ex;"></p>
+<p>Convex corners are in one-to-one correspondence with coordinate symmetric bodies. We prove the Mahler conjecture for coordinate symmetric bodies by formulating and proving a version on convex corners.</p>
+<p>First, we need a notion of polar duality that works for convex corners. If <span class="math inline">\(B_+:= B\cap\Bbb R^n_+\)</span> then</p>
+<p><span class="math display">\[B_+^* := \{x\in\Bbb R^n_+\mid \langle x,y\rangle\le 1 \text{ for all } y\in B_+\} = B^\circ\cap\Bbb R^n_+.\]</span></p>
+<p>Since a coordinate symmetric body consists of <span class="math inline">\(2^n\)</span> identical copies of its convex corner, it is sufficient to prove the following:</p>
+<div class="math thm">
+<p><strong>Theorem.</strong> <br> <em>For each convex corner <span class="math inline">\(B_+\subset\Bbb R^n_+\)</span> holds</em> <span class="math display">\[M_+(B_+):=\operatorname{vol}(B_+)\operatorname{vol}(B_+^*) \ge \smash{\frac1{n!}}.\]</span></p>
+</div>
+</section>
+<section id="proving-the-mahler-conjecture-for-convex-corners" class="level4">
+<h4 class="anchored" data-anchor-id="proving-the-mahler-conjecture-for-convex-corners">Proving the Mahler conjecture for convex corners</h4>
+<p>The following very short and elegant proof is due to Mathieu Meyer from his 1986 article <em>Une caractérisation volumique de certains espaces normés</em>. It was brought to my attention by Raman Sanyal, whose presentation of the proof I follow below.</p>
+<p>Let <span class="math inline">\(B_i:=B_+\cap\{x_i=0\}\)</span> and <span class="math inline">\(B_i^*:=B_+^*\cap \{x_i=0\}\)</span>, and observe that those are themselves convex corners of dimension <span class="math inline">\(n-1\)</span>. Define vectors <span class="math inline">\(v,v^*\in\Bbb R^n\)</span> with components</p>
+<p><span class="math display">\[v_i := \frac{\operatorname{vol}_{n-1}(B_i)}{n \operatorname{vol}_{n}(B_+)},\quad\; v_i^* := \frac{\operatorname{vol}_{n-1}(B_i^*)}{n \operatorname{vol}_{n}(B_+^*)}\]</span></p>
+<p>(where we put dimension subscripts on the volume for clarity). For a point <span class="math inline">\(x\in \Bbb R_+^n\)</span> the inner product <span class="math inline">\(\langle x,v\rangle\)</span> evaluates to</p>
+<p><span class="math display">\[
+\langle x,v\rangle
+= \sum_{i=1}^n x_i\frac{\operatorname{vol}_{n-1}(B_i)}{n \operatorname{vol}_n(B_+)}
+= \frac1{\operatorname{vol}_{n}(B_+)} \cdot \sum_{i=1}^n \underbrace{\tfrac1n{x_i \operatorname{vol}_{n-1}(B_i)}}_{\operatorname{vol}_n(C_i)},
+\]</span></p>
+<p>where <span class="math inline">\(C_i\)</span> is the cone with base face <span class="math inline">\(B_i\)</span> and apex at <span class="math inline">\(x\)</span>.</p>
+<p><img class="center" src="proof.svg" width="23%"></p>
+<p>If <span class="math inline">\(x\in B_+\)</span> then the cones <span class="math inline">\(C_i\)</span> have disjoint interiors and are contained in <span class="math inline">\(B_+\)</span>. In particular, the sum of their volumes is bounded by <span class="math inline">\(\operatorname{vol}_n(B_+)\)</span>. Therefore <span class="math inline">\(\langle x,v\rangle \le 1\)</span> for all <span class="math inline">\(x\in B_+\)</span>, and hence <span class="math inline">\(v\in B_+^*\)</span>. By an analogous argument holds <span class="math inline">\(v^*\in B_+\)</span>. Hence, we can conclude</p>
+<p><span class="math display">\[
+\begin{align}
+1\,\ge\, &amp;\langle v,v^*\rangle
+=  \sum_{i=1}^n \frac{\operatorname{vol}_{n-1}(B_i)\operatorname{vol}_{n-1}(B_i^*)}{n^2\operatorname{vol}_n(B_+)\operatorname{vol}_n(B_+^*)}
+= \sum_{i=1}^n \frac{M_+(B_i)}{n^2M_+(B_+)}.
+\end{align}
+\]</span></p>
+<p>By rearranging and applying the induction hypothesis <span class="math inline">\(M_+(B_i)\ge 1/(n-1)!\)</span> we obtain</p>
+<p><span class="math display">\[
+M_+(B_+) \ge \frac1{n^2} \sum_{i=1}^n M_+(B_i) \ge \frac1{n^2} \cdot\frac{n}{(n-1)!} = \frac1{n!}.
+\]</span></p>
+<p>From this proof one can also extract the minimizers. Those turn out to be precisely the <strong>Hanner corners</strong> (that is, the positive corners obtained from the conjectured minimizers of the Mahler conjecture, the <a href="https://en.wikipedia.org/wiki/Hanner_polytope">Hanner polytopes</a>). In particular, the minimizers among the coordinate symmetric polytopes are indeed the Hanner polytopes.</p>
+</section>
+<section id="its-not-about-central-symmetry-anymore" class="level4">
+<h4 class="anchored" data-anchor-id="its-not-about-central-symmetry-anymore">It’s not about central symmetry anymore</h4>
+<p>It turns out, once the problem is solved for convex corners, there is no longer any need to piece them together into a coordinate symmetric body to satisfy the Mahler conjecture. Even crazier, we don’t even need central symmetry anymore!</p>
+<p>A <strong>locally anti-blocking body</strong> (this is the official term, I don’t have a good alterantive name for this one yet) is a convex body that if restricted to each orthant yields a convex corner.</p>
+<p><img class="center" src="piecewise.svg" width="52%"></p>
+<p>Locally anti-blocking bodies are a much richer family of bodie as compared to the highly symmetric coordinate symmetric bodies. In fact, they need not even be centrally symmetric! Still, they are closed under polar duality and share a number of nice properties with coordinate symmetric bodies.</p>
+<p>The Mahler conjecture for a locally anti-blocking bodies follows from a simple application of the Cauchy-Schwarz inequality: for <span class="math inline">\(\sigma\in\{-1,+1\}^n\)</span> and <span class="math inline">\(x\in\Bbb R^n\)</span> write <span class="math inline">\(\sigma x:=(\sigma_1 x_1,...,\sigma_n x_n)\)</span>. For a locally anti-blocking body <span class="math inline">\(B\)</span> define</p>
+<p><span class="math display">\[
+\begin{align}
+w_\sigma&amp;:=\operatorname{vol}(\sigma B\cap \Bbb R^n_+),\quad
+w_\sigma^*:=\operatorname{vol}(\sigma B^\circ\cap \Bbb R^n_+)
+\end{align},
+\]</span></p>
+<p>which are precisely the volumes of its <span class="math inline">\(2^n\)</span> convex corners. Using Cauchy-Schwarz (CS) and the proof for convex corners <span class="math inline">\((*)\)</span>, we conclude</p>
+<p><span class="math display">\[
+\begin{align}
+M(B)
+= \operatorname{vol}(B)\operatorname{vol}(B^\circ)
+&amp;=\Big(\sum_\sigma w_\sigma\Big)\Big(\sum_\sigma w_\sigma^*\Big)
+\\&amp;\!\overset{\text{(CS)}}\ge \Big(\sum_\sigma \sqrt{w_\sigma w_\sigma^*}\Big)^2
+\overset{(*)}\ge \Big(\frac{2^n}{\sqrt{n!}}\Big)^2 = \frac{4^n}{n!}.
+\end{align}.
+\]</span></p>
+<p>In this case, the minimizers are not necessarily Hanner (since not necessarily centrally symmetric), but more generally, are <strong>locally Hanner</strong>. This means that they yield Hanner corners if restricted to any orthant.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
