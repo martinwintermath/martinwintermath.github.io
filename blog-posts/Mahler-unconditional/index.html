@@ -167,30 +167,29 @@ window.Quarto = {
 
 
 <div class="abstract">
-<p>The <strong>Mahler conjecture</strong> asserts that among all centrally symmetric convex bodies <span class="math inline">\(B\)</span> the cube minimizes the volume product <span class="math inline">\(\operatorname{vol}(B)\operatorname{vol}(B^\circ)\)</span>. While famously open, several proofs have been discovered for the special case of <strong>coordinate symmetric bodies</strong>. I want to share here a very short and elegant proof by Mathieu Meyer that seems otherwise unavailable in the English litrature. <span class="math inline">\(\DeclareMathOperator{\vol}{vol}\)</span></p>
+<p>The <strong>Mahler conjecture</strong> asserts that among all centrally symmetric convex bodies <span class="math inline">\(B\)</span> the cube minimizes the volume product <span class="math inline">\(\operatorname{vol}(B)\operatorname{vol}(B^\circ)\)</span>. While famously open, several proofs have been discovered for the special case of <strong>coordinate symmetric bodies</strong>. I want to share here a surprisingly short and elegant proof by Mathieu Meyer that seems otherwise unavailable in the English litrature. <span class="math inline">\(\DeclareMathOperator{\vol}{vol}\)</span></p>
 </div>
 <!--### Mahler volume and Mahler conjecture ###-->
 <p>Let <span class="math inline">\(B\subset\Bbb R^n\)</span> be a centrally symmetric convex body, where we shall assume <span class="math inline">\(-B=B\)</span>. Kurt Mahler defined the following linearly invariant notion of volume now known as <strong>Mahler volume</strong>:</p>
 <p><span class="math display">\[
 M(B):=\operatorname{vol}(B)\operatorname{vol}(B^\circ).
 \]</span></p>
-<p>Here <span class="math inline">\(B^\circ:=\{y\in\Bbb R^n\mid \langle x,y\rangle\le 1\text{ for all }x\in B\}\)</span> denotes the polar dual of <span class="math inline">\(B\)</span>. It has long been known that the Mahler volume attains a maximum for the sphere. There are also clear ideas for what might minimize the Mahler volume, but a proof remains elusive. This is the infamous <em>Mahler conjecture</em>, which remains open to this day:</p>
+<p>Here <span class="math inline">\(B^\circ:=\{y\in\Bbb R^n\mid \langle x,y\rangle\le 1\text{ for all }x\in B\}\)</span> denotes the polar dual of <span class="math inline">\(B\)</span>. It has long been known that the Mahler volume attains a maximum for the sphere. There are also clear ideas for what should minimize the Mahler volume: the cube, and more generally, each of the <a href="https://en.wikipedia.org/wiki/Hanner_polytope">Hanner polytopes</a>. But a proof remains elusive. This is the infamous <em>Mahler conjecture</em>, which remains open to this day:</p>
 <div class="math conj">
 <p><strong>Mahler conjecture.</strong> <br> <em>For each centrally symmetric convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> holds</em> <span class="math display">\[M(B)\ge M(\text{$n$-cube}) = \smash{\frac{4^n}{n!}}.\]</span></p>
 </div>
-<p>Below I share a very elegant proof for the special case of <em>coordinate symmetric bodies</em> that, I believe, is not available in the English literature elsewhere. For some general background on the Mahler conjecture as well as its status, check out the <a href="https://en.wikipedia.org/wiki/Mahler_volume">Wikipedia article</a> and <a href="https://terrytao.wordpress.com/2007/03/08/open-problem-the-mahler-conjecture-on-convex-bodies/">Terry Tao’s blog entry</a> on the topic.</p>
+<p>Below I share a very elegant and somewhat mysterious proof for the special case of <em>coordinate symmetric bodies</em> that, I believe, is not available in the English literature elsewhere. For some general background on the Mahler conjecture as well as its status, check out the <a href="https://en.wikipedia.org/wiki/Mahler_volume">Wikipedia article</a> and <a href="https://terrytao.wordpress.com/2007/03/08/open-problem-the-mahler-conjecture-on-convex-bodies/">Terry Tao’s blog entry</a> on the topic.</p>
 <section id="coordinate-symmetric-bodies-and-convex-corners" class="level4">
 <h4 class="anchored" data-anchor-id="coordinate-symmetric-bodies-and-convex-corners">Coordinate symmetric bodies and convex corners</h4>
-<p>A convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> is <strong>coordinate symmetric</strong> if it is invariant under reflection on each coordinate hyperplane <span class="math inline">\(H_i:=\{x_i=0\}\)</span>. Clearly, coordinate symmetric bodies are centrally symmetric and closed under polarity. <!-- $x=(x_1,...,x_n)\in B$ follows $(\pm x_1,...,\pm x_n)\in B$ as well. Or eq--> <!--This class of convex bodies is in the literature better known as *unconditional bodies*.
+<p>A convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> is <strong>coordinate symmetric</strong> if it is invariant under reflection on each coordinate hyperplane <span class="math inline">\(H_i:=\{x_i=0\}\)</span>. A number of properties make coordinate symmetric bodies a natural special case for studying the Mahler conjecture: they are centrally symmetric, closed under polarity, and they contain all Hanner polytopes. <!-- $x=(x_1,...,x_n)\in B$ follows $(\pm x_1,...,\pm x_n)\in B$ as well. Or eq--> <!--This class of convex bodies is in the literature better known as *unconditional bodies*.
 I am unsure about the origin of this term, and I tend to dislike it since it is seems the opposite of self-explanatory.--></p>
 <p><img class="center" src="symmetric.svg" width="50%"></p>
-<p>In the literature these bodies are often called “unconditional bodies”, a term going back to “unconditional convergence” mostly used in Banach space theory. For geometric (that is, finite-dimensional) discussions I prefer to go with the more visually inspired term “coordinate symmetric”.</p>
+<p>In the literature these bodies are often called “unconditional bodies”, a term going back to “unconditional convergence” motivated from Banach space theory. For geometric (that is, finite-dimensional) discussions I prefer to go with the more visually inspired term “coordinate symmetric”.</p>
 <p>A coordinate symmetric body <span class="math inline">\(B\)</span> is clearly determined by its restriction <span class="math inline">\(B_+:=B\cap\Bbb R^n_+\)</span> to the positive orthant <span class="math inline">\(\Bbb R_+^n:=\{x_i\ge 0\}\)</span>. A set <span class="math inline">\(B_+\subset\Bbb R^n_+\)</span> that can be written as such a restriction of a coordinate symmetric body is called a <strong>convex corner</strong> (also known as an <em>anti-blocking body</em>).</p>
 <p><img class="center" src="corners.svg" width="95%" style="margin-top:1ex; margin-bottom:1ex;"></p>
-<p>Convex corners are in one-to-one correspondence with coordinate symmetric bodies. We prove the Mahler conjecture for coordinate symmetric bodies by formulating and proving a version on convex corners.</p>
-<p>First, we need a notion of polar duality that works for convex corners. If <span class="math inline">\(B_+:= B\cap\Bbb R^n_+\)</span> then</p>
+<p>Convex corners are in one-to-one correspondence with coordinate symmetric bodies. We prove the Mahler conjecture for coordinate symmetric bodies by formulating and proving a version on convex corners. For this we require a notion of polar duality that works for convex corners. If <span class="math inline">\(B_+:= B\cap\Bbb R^n_+\)</span> then</p>
 <p><span class="math display">\[B_+^* := \{x\in\Bbb R^n_+\mid \langle x,y\rangle\le 1 \text{ for all } y\in B_+\} = B^\circ\cap\Bbb R^n_+.\]</span></p>
-<p>Since a coordinate symmetric body consists of <span class="math inline">\(2^n\)</span> identical copies of its convex corner, it is sufficient to prove the following:</p>
+<p>Since a coordinate symmetric body consists of <span class="math inline">\(2^n\)</span> identical copies of its convex corner and hence <span class="math inline">\(\vol(B)=2^n\vol(B_+)\)</span>, it is sufficient to prove the following:</p>
 <div class="math thm">
 <p><strong>Theorem.</strong> <br> <em>For each convex corner <span class="math inline">\(B_+\subset\Bbb R^n_+\)</span> holds</em> <span class="math display">\[M_+(B_+):=\operatorname{vol}(B_+)\operatorname{vol}(B_+^*) \ge \smash{\frac1{n!}}.\]</span></p>
 </div>
@@ -200,7 +199,7 @@ I am unsure about the origin of this term, and I tend to dislike it since it is 
 <p>The following very short and elegant proof is due to Mathieu Meyer from his 1986 article <em>Une caractérisation volumique de certains espaces normés</em>. It was brought to my attention by Raman Sanyal, whose presentation of the proof I follow below.</p>
 <p>Let <span class="math inline">\(B_i:=B_+\cap\{x_i=0\}\)</span> and <span class="math inline">\(B_i^*:=B_+^*\cap \{x_i=0\}\)</span>, and observe that those are themselves convex corners of dimension <span class="math inline">\(n-1\)</span>. Define vectors <span class="math inline">\(v,v^*\in\Bbb R^n\)</span> with components</p>
 <p><span class="math display">\[v_i := \frac{\operatorname{vol}_{n-1}(B_i)}{n \operatorname{vol}_{n}(B_+)},\quad\; v_i^* := \frac{\operatorname{vol}_{n-1}(B_i^*)}{n \operatorname{vol}_{n}(B_+^*)}\]</span></p>
-<p>(where we put dimension subscripts on the volume for clarity). For a point <span class="math inline">\(x\in \Bbb R_+^n\)</span> the inner product <span class="math inline">\(\langle x,v\rangle\)</span> evaluates to</p>
+<p>(where from now on we put dimension subscripts on the volumes to avoid confusion). For a point <span class="math inline">\(x\in \Bbb R_+^n\)</span> the inner product <span class="math inline">\(\langle x,v\rangle\)</span> evaluates to</p>
 <p><span class="math display">\[
 \langle x,v\rangle
 = \sum_{i=1}^n x_i\frac{\operatorname{vol}_{n-1}(B_i)}{n \operatorname{vol}_n(B_+)}
@@ -220,22 +219,22 @@ I am unsure about the origin of this term, and I tend to dislike it since it is 
 <p><span class="math display">\[
 M_+(B_+) \ge \frac1{n^2} \sum_{i=1}^n M_+(B_i) \ge \frac1{n^2} \cdot\frac{n}{(n-1)!} = \frac1{n!}.
 \]</span></p>
-<p>From this proof one can also extract the minimizers. Those turn out to be precisely the <strong>Hanner corners</strong> (that is, the positive corners obtained from the conjectured minimizers of the Mahler conjecture, the <a href="https://en.wikipedia.org/wiki/Hanner_polytope">Hanner polytopes</a>). In particular, the minimizers among the coordinate symmetric polytopes are indeed the Hanner polytopes.</p>
+<p>From this proof one can also extract the minimizers. Those turn out to be precisely the <em>Hanner corners</em> (that is, the positive corners of Hanner polytopes). Consequently, the minimizers among the coordinate symmetric bodies are indeed the Hanner polytopes.</p>
 </section>
 <section id="its-not-about-central-symmetry-anymore" class="level4">
 <h4 class="anchored" data-anchor-id="its-not-about-central-symmetry-anymore">It’s not about central symmetry anymore</h4>
-<p>It turns out, once the problem is solved for convex corners, there is no longer any need to piece them together into a coordinate symmetric body to satisfy the Mahler conjecture. Even crazier, we don’t even need central symmetry anymore!</p>
-<p>A <strong>locally anti-blocking body</strong> (this is the official term, I don’t have a good alterantive name for this one yet) is a convex body that if restricted to each orthant yields a convex corner.</p>
+<p>Coordinate symmetric bodies might seem a bit … restrictive. After all, they require quite some symmetry. However, as it turns out, once the problem is solved for convex corners, there is no longer any need to piece them together into a coordinate symmetric body to satisfy the Mahler conjecture. Even wilder, we don’t even need central symmetry anymore!</p>
+<p>A <strong>locally anti-blocking body</strong> is a convex body that if restricted to each orthant yields a convex corner (this is the official term, I don’t yet have a good idea for a more visually descriptive name).</p>
 <p><img class="center" src="piecewise.svg" width="52%"></p>
 <p>Locally anti-blocking bodies are a much richer family of bodie as compared to the highly symmetric coordinate symmetric bodies. In fact, they need not even be centrally symmetric! Still, they are closed under polar duality and share a number of nice properties with coordinate symmetric bodies.</p>
-<p>The Mahler conjecture for a locally anti-blocking bodies follows from a simple application of the Cauchy-Schwarz inequality: for <span class="math inline">\(\sigma\in\{-1,+1\}^n\)</span> and <span class="math inline">\(x\in\Bbb R^n\)</span> write <span class="math inline">\(\sigma x:=(\sigma_1 x_1,...,\sigma_n x_n)\)</span>. For a locally anti-blocking body <span class="math inline">\(B\)</span> define</p>
+<p>The Mahler conjecture for locally anti-blocking bodies can be proven using the Cauchy-Schwarz inequality. For <span class="math inline">\(\sigma\in\{-1,+1\}^n\)</span> write <span class="math inline">\(\Bbb R^n_\sigma:=\{x\in\Bbb R^n\mid \sigma_i x_i\ge 0\}\)</span>. For a locally anti-blocking body <span class="math inline">\(B\)</span> define</p>
 <p><span class="math display">\[
 \begin{align}
-w_\sigma&amp;:=\operatorname{vol}(\sigma B\cap \Bbb R^n_+),\quad
-w_\sigma^*:=\operatorname{vol}(\sigma B^\circ\cap \Bbb R^n_+)
+w_\sigma&amp;:=\operatorname{vol}( B\cap \Bbb R^n_\sigma),\quad
+w_\sigma^*:=\operatorname{vol}( B^\circ\cap \Bbb R^n_\sigma)
 \end{align},
 \]</span></p>
-<p>which are precisely the volumes of its <span class="math inline">\(2^n\)</span> convex corners. Using Cauchy-Schwarz (CS) and the proof for convex corners <span class="math inline">\((*)\)</span>, we conclude</p>
+<p>which are precisely the volumes of its <span class="math inline">\(2^n\)</span> convex corners. Using the Cauchy-Schwarz inequality (CS) and the proof for convex corners <span class="math inline">\((*)\)</span>, we conclude</p>
 <p><span class="math display">\[
 \begin{align}
 M(B)
@@ -243,9 +242,8 @@ M(B)
 &amp;=\Big(\sum_\sigma w_\sigma\Big)\Big(\sum_\sigma w_\sigma^*\Big)
 \\&amp;\!\overset{\text{(CS)}}\ge \Big(\sum_\sigma \sqrt{w_\sigma w_\sigma^*}\Big)^2
 \overset{(*)}\ge \Big(\frac{2^n}{\sqrt{n!}}\Big)^2 = \frac{4^n}{n!}.
-\end{align}.
+\end{align}
 \]</span></p>
-<p>In this case, the minimizers are not necessarily Hanner (since not necessarily centrally symmetric), but more generally, are <strong>locally Hanner</strong>. This means that they yield Hanner corners if restricted to any orthant.</p>
 
 
 </section>
