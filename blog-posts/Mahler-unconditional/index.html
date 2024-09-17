@@ -197,7 +197,7 @@ I am unsure about the origin of this term, and I tend to dislike it since it is 
 <section id="proving-the-mahler-conjecture-for-convex-corners" class="level4">
 <h4 class="anchored" data-anchor-id="proving-the-mahler-conjecture-for-convex-corners">Proving the Mahler conjecture for convex corners</h4>
 <p>The following very short and elegant proof is due to Mathieu Meyer from his 1986 article <em>Une caractérisation volumique de certains espaces normés</em>. It was brought to my attention by Raman Sanyal, whose presentation of the proof I follow below.</p>
-<p>Let <span class="math inline">\(B_i:=B_+\cap\{x_i=0\}\)</span> and <span class="math inline">\(B_i^*:=B_+^*\cap \{x_i=0\}\)</span>, and observe that those are themselves convex corners of dimension <span class="math inline">\(n-1\)</span>. Define vectors <span class="math inline">\(v,v^*\in\Bbb R^n\)</span> with components</p>
+<p>Let <span class="math inline">\(B_i:=B_+\cap\{x_i=0\}\)</span> and <span class="math inline">\(B_i^*:=B_+^*\cap \{x_i=0\}\)</span>, and observe that those are themselves convex corners of dimension <span class="math inline">\(n-1\)</span>, and are duals of each other in the sense defined above. Define vectors <span class="math inline">\(v,v^*\in\Bbb R^n\)</span> with components</p>
 <p><span class="math display">\[v_i := \frac{\operatorname{vol}_{n-1}(B_i)}{n \operatorname{vol}_{n}(B_+)},\quad\; v_i^* := \frac{\operatorname{vol}_{n-1}(B_i^*)}{n \operatorname{vol}_{n}(B_+^*)}\]</span></p>
 <p>(where from now on we put dimension subscripts on the volumes to avoid confusion). For a point <span class="math inline">\(x\in \Bbb R_+^n\)</span> the inner product <span class="math inline">\(\langle x,v\rangle\)</span> evaluates to</p>
 <p><span class="math display">\[
@@ -224,7 +224,7 @@ M_+(B_+) \ge \frac1{n^2} \sum_{i=1}^n M_+(B_i) \ge \frac1{n^2} \cdot\frac{n}{(n-
 <section id="its-not-about-central-symmetry-anymore" class="level4">
 <h4 class="anchored" data-anchor-id="its-not-about-central-symmetry-anymore">It’s not about central symmetry anymore</h4>
 <p>Coordinate symmetric bodies might seem a bit … restrictive. After all, they require quite some symmetry. However, as it turns out, once the problem is solved for convex corners, there is no longer any need to piece them together into a coordinate symmetric body to satisfy the Mahler conjecture. Even wilder, we don’t even need central symmetry anymore!</p>
-<p>A <strong>locally anti-blocking body</strong> is a convex body that if restricted to each orthant yields a convex corner (this is the official term, I don’t yet have a good idea for a more visually descriptive name).</p>
+<p>A <strong>locally anti-blocking body</strong> is a convex body that if restricted to any orthant yields a convex corner (this is the official term, I don’t yet have a good idea for a more visually descriptive name).</p>
 <p><img class="center" src="piecewise.svg" width="52%"></p>
 <p>Locally anti-blocking bodies are a much richer family of bodie as compared to the highly symmetric coordinate symmetric bodies. In fact, they need not even be centrally symmetric! Still, they are closed under polar duality and share a number of nice properties with coordinate symmetric bodies.</p>
 <p>The Mahler conjecture for locally anti-blocking bodies can be proven using the Cauchy-Schwarz inequality. For <span class="math inline">\(\sigma\in\{-1,+1\}^n\)</span> write <span class="math inline">\(\Bbb R^n_\sigma:=\{x\in\Bbb R^n\mid \sigma_i x_i\ge 0\}\)</span>. For a locally anti-blocking body <span class="math inline">\(B\)</span> define</p>
@@ -240,8 +240,8 @@ w_\sigma^*:=\operatorname{vol}( B^\circ\cap \Bbb R^n_\sigma)
 M(B)
 = \operatorname{vol}(B)\operatorname{vol}(B^\circ)
 &amp;=\Big(\sum_\sigma w_\sigma\Big)\Big(\sum_\sigma w_\sigma^*\Big)
-\\&amp;\!\overset{\text{(CS)}}\ge \Big(\sum_\sigma \sqrt{w_\sigma w_\sigma^*}\Big)^2
-\overset{(*)}\ge \Big(\frac{2^n}{\sqrt{n!}}\Big)^2 = \frac{4^n}{n!}.
+\\&amp;\!\overset{\text{(CS)}}\ge \Big(\sum_\sigma \sqrt{w_\sigma w_\sigma^*}\Big)^{\kern-1pt 2}
+\overset{(*)}\ge \Big(\frac{2^n}{\sqrt{n!}}\Big)^{\kern-1pt 2} = \frac{4^n}{n!}.
 \end{align}
 \]</span></p>
 
