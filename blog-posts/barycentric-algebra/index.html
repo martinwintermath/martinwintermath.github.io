@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-11-06">
 
-<title>Martin Winter</title>
+<title>Barycentric algebra – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +24,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -51,18 +52,47 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Martin Winter</span>
     </a>
   </div>
@@ -72,27 +102,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
+    <a class="nav-link" href="../../research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
+    <a class="nav-link" href="../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./talks.html"> 
+    <a class="nav-link" href="../../talks.html"> 
 <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./teaching.html"> 
+    <a class="nav-link" href="../../teaching.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -103,44 +133,79 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Barycentric algebra</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 6, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-<p><span style="font-size:16pt;"><strong>Martin Winter</strong>, PhD</span> <br> <!--<martin.winter@tu-berlin.de>--> <a href="mailto:winter@math.tu-berlin.de" class="email">winter@math.tu-berlin.de</a></p>
-<p><img src="img/me.jpg" width="250px" style="margin-left:15px;margin-bottom:15px;float:right"></p>
-<p>I am a <strong>mathematician</strong>. I am <a href="https://www.math-berlin.de/bms-faculty/dirichlet-postdoctoral-program">Dirichlet fellow</a> at TU Berlin and guest researcher at the <a href="https://www.mis.mpg.de/de/">Max-Planck-Institute for Mathematics in the Sciences</a> in Leipzig. I am researching in discrete geometry, real algebraic geometry, semi-definite optimization, spectral graph theory, algebraic combinatorics and low-dimensional topology. <!--My main mathematical interest is **Geometry** in its various forms, in particular, discrete, convex and real algebraic geometry, also touching on many aspects of graph theory, topology and representation theory.--> Most recently I am studying the <a href="./wachspress-geometry.html">Wachspress Geometry</a> of convex polytopes.</p>
-<p>I am principal investigator in the priority program <a href="https://www.combinatorial-synergies.de/">“Combinatorial Synergies”</a> and my project is <em>“Wachspress Coordinates - a Bridge between Algebra, Geometry and Combinatorics”</em>.</p>
-<p>Before, I was postdoc at the <a href="https://warwick.ac.uk/fac/sci/maths/">University of Warwick</a> (UK). I got my PhD from TU Chemnitz (Germany) in 2021.</p>
-<!--**Where you can meet me next:**-->
-<p><strong>Recent information</strong></p>
-<!--
-* I will be at the [Summer School "Algebraic Combinatorics"](https://www.mis.mpg.de/events/series/summer-school-in-algebraic-combinatorics) at the Max-Planck-Institute in Leipzig (July 15 - 19, 2024).
-* I am invited speaker at the [Annual Conference of the SPP2458 "Combinatorial Synergies"](https://www.math-conf.uni-osnabrueck.de/combinatorial-synergies/) in Osnabrück (September 11 - 13, 2024).
-* [Rainer Sinn](https://www.math.uni-leipzig.de/~sinn/) and I are organizing a two-day workshop ["Wachspress Geometry"]
-(https://www.math.uni-leipzig.de/~sinn/wachspress.html) at the University of Leipzig (September 24 - 25, 2024).
--->
-<!--* You can meet me at the [Symposium Discrete Mathematics](https://www3.math.tu-berlin.de/combi/dmg/conferences/241011-Symposium+Discrete+Mathematics.html) at TU Berlin (October 11 - 12, 2024).-->
+
+<p>Today I hosted <em>Anna Zamojska-Dzienio</em> from the Warsaw University of Technology. She introduced me to <strong>barycentric algbras</strong>. Among other things, they allow us to see polytopes and face lattices as <em>the same sort of object</em> ! <!--, and they provide a new perspective on their relation.--> Intuitively, barycentric algebras are spaces in which one can take the convex combination of elements. I give here my own interpretation of this subject. Since all of this is new to me there might be errors. Those are mine and not Anna’s.</p>
+<div class="math def">
+<p>A <strong>barycentric algebra</strong> <span class="math inline">\(\mathcal B\)</span> is an algebra in the sense of “abstract algebra”, consisting of a ground set <span class="math inline">\(B\)</span>, and for each real number <span class="math inline">\(r\in(0,1)\)</span> a binary operation <span class="math inline">\(\underline{r}:B\times B\to B\)</span>, subject to the following three axioms:</p>
 <ul>
-<li>In the winter semester 24/25 I will be teaching the course <a href="lecture-rigidity">“Rigidity Theory for Frameworks and Polytopes”</a> at TU Berlin.</li>
-<li>I will be at the Discrete Geometry Nexus at FU Berlin (November 28). <!--* On December 4 I am hosting [Rainer Sinn](https://www.math.uni-leipzig.de/~sinn/) at TU Berlin. He will speak in the [Discrete Geometry seminar](https://www3.math.tu-berlin.de/combi/dmg/seminar/) about "Positive Geometry in the plane".--> <!--* I will be visiting the group of Ivan Izmestiev at TU Wien, January 6 -- 10, 2025.--></li>
-<li>I will be visiting the <a href="https://www.cs.cas.cz/combinatorics/people.html">Combinatorial Group</a> at the <a href="https://www.cs.cas.cz/en">Czech Academy of Sciences</a>, January 13 – 15, 2025. I will speak in their <a href="https://www.cs.cas.cz/combinatorics/seminar.html">seminar</a> on January 14.</li>
-<li>March 10 – 21, 2025 I will be visiting ICERM (Brown University) during the special semester on <a href="https://icerm.brown.edu/program/semester_program/sp-s25">“Geometry of Materials, Packings and Rigid Frameworks”</a>, and will take part in the workshop <a href="https://icerm.brown.edu/program/semester_program_workshop/sp-s25-w2">“Matroids, Rigidity, and Algebraic Statistics”</a> (March 17 - 21, 2025)</li>
+<li><em>idempotence</em> : <span class="math inline">\(\;\underline{r}(a,a)=a\)</span>,</li>
+<li><em>skew-symmetry</em> : <span class="math inline">\(\;\underline{r}(a,b)=\underline{r}^*(b,a)\)</span>, where <span class="math inline">\(r^*:=1-r\)</span>,</li>
+<li><em>skew-associativity</em> : using <span class="math inline">\(r\circ s:=(r^*s^*)^*=r+s-rs\)</span> it holds <span class="math display">\[r\big(s(a,b),c\big) = \underline{\smash{r\circ s}}\big(a,\underline{\tfrac{r}{r\circ s}}(b,c)\big).\]</span></li>
 </ul>
-<p>I am an active user of the <strong>StackExchange</strong> network. Here are links to my mathematical profiles:</p>
-<ul>
-<li><a href="https://mathoverflow.net/users/108884">MathOverflow</a></li>
-<li><a href="https://math.stackexchange.com/users/415941">Math.StackExchange</a></li>
-</ul>
-<center style="margin-top:2em">
-<a href="https://www.tu.berlin/math"><img src="img/tu_berlin.svg" width="22%"></a> <img width="2.5%"> <a href="https://www.combinatorial-synergies.de"><img src="img/BWM-farbig-typo-schwarz.svg" width="25%"></a> <img width="2.5%"> <a href="https://www.mis.mpg.de/de/"><img src="img/mpi_mis.svg" width="42%"></a>
-</center>
+</div>
+<p>The two most instructive examples for barycentric algebras also represent the two extreme cases:</p>
+<p><strong>Convex sets.</strong> A convex set <span class="math inline">\(K\subseteq\Bbb R^n\)</span> can be identified as a barycentric algebra by setting</p>
+<p><span class="math display">\[\underline{r}(a,b):=(1-r)a+rb.\]</span></p>
+<p>In particular, polytopes are barycentric algebras. In some sense, polytopes are the finitely generated barycentric algebras (more details below).</p>
+<p><strong>Semi-lattices.</strong> A (join) semi-lattice <span class="math inline">\(\mathcal L\)</span> with a join operation <span class="math inline">\(\vee\)</span> is a barycentric algebra under the operation</p>
+<p><span class="math display">\[\underline{r}(a,b):=a\vee b.\]</span></p>
+<p>In particular, the face lattice <span class="math inline">\(\mathcal F(P)\)</span> of a polytope <span class="math inline">\(P\)</span> is a barycentric algebra.</p>
+<div class="math def">
+<p>A <strong>barycentric algebra homomorphism</strong> is a map <span class="math inline">\(\phi:\mathcal A\to\mathcal B\)</span> with</p>
+<p><span class="math display">\[\phi\big(\underline{r}(a,b)\big)= \underline{r}\big(\phi(a),\phi(b)\big).\]</span></p>
+</div>
+<p>The relation between polytopes and their face lattices is the following: the map <span class="math inline">\(P\to\mathcal F(P)\)</span> that sends a point <span class="math inline">\(x\in P\)</span> to the unique face <span class="math inline">\(\sigma\in\mathcal F(P)\)</span> that contains <span class="math inline">\(x\)</span> as an interior point, is a (barycentric algebra) homomorphism. And it is a <em>distinguished</em> homomorphism, as we will see shortly.</p>
+<p>The relevant property that separates barycentric algebras of convex sets from the ones definde on semi-lattices turns out to be <strong>cancellativity</strong>:</p>
+<p><span class="math display">\[\underline{r}(a,b)=\underline{r}(a,c) \;\implies\; b=c.\]</span></p>
+<p>Convex sets are cancellative; whereas semi-lattices are “the most non-cancellative” in the sense that they don’t have any non-trivial cancellative sub-algebras. Cancellativity is also a main reason for why we use <span class="math inline">\(r\in(0,1)\)</span> as opposed to <span class="math inline">\(r\in[0,1]\)</span>: otherwise no barycentric algebra would be cancellative.</p>
+<p>Based on this, barycentric algebras are divided into three types:</p>
+<ol type="1">
+<li><strong>geometric type</strong> are the cencellative barycentric algebras. They are intended to abstract convex sets.</li>
+<li><strong>combinatorial type</strong> have no non-trivial cancellative sub-algebras (in particular, are non-cancellative themselves). They are precisely the semi-lattices.</li>
+<li><strong>mixed type</strong> fall into neither of the above classes.</li>
+</ol>
+<p>An example of a mixed type is <span class="math inline">\(\Bbb R\cup\{\infty\}\)</span> with <span class="math inline">\(\underline{r}(x,\infty)=\infty\)</span> and normal convex combination on all other elements.</p>
+<p>There exists a satisfying structure theory for barycentric algebras that separates the geometry from the combinatorics: each barycentric algebra can be subdivided into cancellative sub-algebras (the geometric parts), that when “contracted” leave a semi-lattice (the combinatorial part).</p>
+<div class="math thm">
+<p><strong>Theorem</strong> <br> <em> For a barycentric algebra <span class="math inline">\(\mathcal B\)</span> exists a unique homomorphism <span class="math inline">\(\phi:\mathcal B\to\mathcal L\)</span> onto a semi-lattice <span class="math inline">\(\mathcal L\)</span> so that all preimages of elements <span class="math inline">\(\sigma\in\mathcal L\)</span> are cancellative. </em></p>
+</div>
+<p>For polytopes this distinguished semi-lattice is precisely the face-lattice (minus the empty face).</p>
+<p>This provides us with an “abstract algebra” definition of face-lattice! A simplex is a finitely-generated free barycentric algebra; a polytope is a homomorphic cancellative image of a simplex (analogous to how polytopes are projections of simplices); and a face-lattice is a maximal “totally non-cancellative” image of a polytope.</p>
+<!--We can then ask what is the reductive of other convex sets that are not polytopes.
+Polyedra for example are not finitely generated as barycentric algebra, yet, their reducive is a finite lattice.
+The convex ball is also not finitely generated, but its reducive is an infinite semi-lattice.-->
 
 
 
@@ -564,6 +629,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="MathWinter/blogComments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
