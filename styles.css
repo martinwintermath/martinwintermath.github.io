@@ -1,8 +1,15 @@
 /* css styles */
 
-a:link {
+main.content a {
     text-decoration: none;
-    /*color: rgb(0, 171, 238)*/
+    /*color: rgb(0, 171, 238);
+    color: rgb(0, 153, 0);
+    color: #93C54B;*/
+    color: #88b844;
+}
+
+main.content a:hover {
+    text-decoration: underline;
 }
 
 div.math {

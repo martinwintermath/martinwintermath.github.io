@@ -172,7 +172,7 @@ window.Quarto = {
 <ul>
 <li><em>idempotence</em> : <span class="math inline">\(\;\underline{r}(a,a)=a\)</span>,</li>
 <li><em>skew-symmetry</em> : <span class="math inline">\(\;\underline{r}(a,b)=\underline{r}^*(b,a)\)</span>, where <span class="math inline">\(r^*:=1-r\)</span>,</li>
-<li><em>skew-associativity</em> : using <span class="math inline">\(r\circ s:=(r^*s^*)^*=r+s-rs\)</span> it holds <span class="math display">\[r\big(s(a,b),c\big) = \underline{\smash{r\circ s}}\big(a,\underline{\tfrac{r}{r\circ s}}(b,c)\big).\]</span></li>
+<li><em>skew-associativity</em> : using <span class="math inline">\(r\circ s:=(r^*s^*)^*=r+s-rs\)</span> it holds <span class="math display">\[\underline r\big(\underline s(a,b),c\big) = \underline{\smash{r\circ s}}\big(a,\underline{\tfrac{r}{r\circ s}}(b,c)\big).\]</span></li>
 </ul>
 </div>
 <p>The two most instructive examples for barycentric algebras also represent the two extreme cases:</p>
@@ -202,7 +202,7 @@ window.Quarto = {
 <p><strong>Theorem</strong> <br> <em> For a barycentric algebra <span class="math inline">\(\mathcal B\)</span> exists a unique homomorphism <span class="math inline">\(\phi:\mathcal B\to\mathcal L\)</span> onto a semi-lattice <span class="math inline">\(\mathcal L\)</span> so that all preimages of elements <span class="math inline">\(\sigma\in\mathcal L\)</span> are cancellative. </em></p>
 </div>
 <p>For polytopes this distinguished semi-lattice is precisely the face-lattice (minus the empty face).</p>
-<p>This provides us with an “abstract algebra” definition of face-lattice! A simplex is a finitely-generated free barycentric algebra; a polytope is a homomorphic cancellative image of a simplex (analogous to how polytopes are projections of simplices); and a face-lattice is a maximal “totally non-cancellative” image of a polytope.</p>
+<p>This provides us with an “abstract algebra” definition of face-lattice! A simplex is a finitely-generated free barycentric algebra; a polytope is a cancellative homomorphic image of a simplex (analogous to how polytopes are projections of simplices); and a face-lattice is a maximal “totally non-cancellative” homomorphic image of a polytope.</p>
 <!--We can then ask what is the reductive of other convex sets that are not polytopes.
 Polyedra for example are not finitely generated as barycentric algebra, yet, their reducive is a finite lattice.
 The convex ball is also not finitely generated, but its reducive is an infinite semi-lattice.-->
