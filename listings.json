@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blog-posts/coning-frameworks/index.html",
       "/blog-posts/barycentric-algebra/index.html",
       "/blog-posts/Mahler-unconditional/index.html",
       "/blog-posts/double-kissing-problem/index.html"
