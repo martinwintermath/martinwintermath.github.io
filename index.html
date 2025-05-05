@@ -51,6 +51,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -119,23 +148,22 @@ ul.task-list li input[type="checkbox"] {
 <p>My research is in discrete geometry, real algebraic geometry, geometric rigidity, semi-definite optimization, spectral graph theory, algebraic combinatorics and low-dimensional topology. <!--My main mathematical interest is **Geometry** in its various forms, in particular, discrete, convex and real algebraic geometry, also touching on many aspects of graph theory, topology and representation theory.--> Most recently I am studying the <a href="./wachspress-geometry.html">Wachspress Geometry</a> of convex polytopes. <!--
 I am principal investigator in the priority program ["Combinatorial Synergies"](https://www.combinatorial-synergies.de/) and my project is *"Wachspress Coordinates - a Bridge between Algebra, Geometry and Combinatorics"*.--> I am also working on the formalization of discrete geometry (especially polytope theory) in <a href="https://leanprover-community.github.io/">Lean</a>.</p>
 <p>Until 2024, I was postdoc at the <a href="https://warwick.ac.uk/fac/sci/maths/">University of Warwick</a> (UK). I got my PhD from <a href="https://www.tu-chemnitz.de/mathematik/">TU Chemnitz</a> (Germany) in 2021.</p>
-<!--**What's new**
-
-* Starting this month (April 2025) you can meet me both at TU Berlin and MPI Leipzig. -->
-<!--
-* I was visiting **ICERM** March 10 -- 21 during the special semester on ["Geometry of Materials, Packings and Rigid Frameworks"](https://icerm.brown.edu/program/semester_program/sp-s25) and the workshop ["Matroids, Rigidity, and Algebraic Statistics"](https://icerm.brown.edu/program/semester_program_workshop/sp-s25-w2).
-    + on March 14 I spoke in their seminar about *"Progress on the stress-flex conjecture for coned polytope frameworks"* (joined work with Roman Prosanov and Ivan Izmestiev)
-    + on March 18 I gave a Lighting Talk titled *"The prestress stability surface of a convex polytope"* (joined work with Matthias Himmelmann)
-    -->
-<!--* I am currently teaching the course ["Rigidity Theory for Frameworks and Polytopes"](lecture-rigidity.html) at TU Berlin.-->
-<!--**Where you can meet me next:**-->
+<p><strong>What’s new</strong></p>
+<ul>
+<li>New preprint <em>“Rigidity of polytopes with edge length and coplanarity constraints”</em> with <a href="https://matthiashimmelmann.github.io/">Matthias Himmelmann</a> and <a href="https://www.lancaster.ac.uk/maths/people/bernd-schulze">Bernd Schulze</a> [<a href="https://arxiv.org/abs/2505.00874">arXiv</a>]</li>
+</ul>
 <p><strong>What’s coming</strong></p>
 <!--* Tom Baumbach (TU Berlin) will present our joined research on *"Rational barycentric coordinates and polytopes with low degree adjoints"* at [**Combinatorial Synergies East**](https://www.mis.mpg.de/de/events/series/combinatorial-synergies-east) in Leipzig (March 19 -- 21, 2025).-->
 <!--* I am speaking in the [Nonlinear Algebra seminar](https://www.mis.mpg.de/events/series/seminar-on-nonlinear-algebra) at **MPI Leipzig** (April 24).-->
 <ul>
 <li>I am visiting <a href="https://j-carmesin.github.io/">Johannes Carmesin</a> and <a href="https://www.jan-kurkofka.eu/">Jan Kurkofka</a> at <strong>TU Freiberg</strong> and I will speak in their seminar (May 14).</li>
-<li>I will visit <a href="http://www.tmuetze.de/">Torsten Mütze</a> at the <strong>University of Kassel</strong> (June 10 – 11). I will speak in the Oberseminar on June 10.</li>
-<li>I will come for a research visit to the <strong>Goethe University Frankfurt</strong> visiting <a href="https://www.math.uni-frankfurt.de/~sanyal/">Raman Sanyal</a> (June 30 - July 4, 2025). I am speaking in the seminar June 1.</li>
+<li>I am visiting <a href="http://www.tmuetze.de/">Torsten Mütze</a> at the <strong>University of Kassel</strong> (June 10 – 11). I will speak in the Oberseminar on June 10.</li>
+<li>I am coming for a research visit to the <strong>Goethe University Frankfurt</strong> visiting <a href="https://www.math.uni-frankfurt.de/~sanyal/">Raman Sanyal</a> (June 30 - July 4, 2025). I am speaking in the seminar June 1.</li>
+</ul>
+<p><strong>Selected papers</strong></p>
+<ul>
+<li><em>Rigidity, Tensegrity and Reconstruction of Polytopes under Metric Constraints</em> [<a href="https://arxiv.org/abs/2302.14194">arXiv</a>, <a href="https://doi.org/10.1093/imrn/rnad298">journal</a>] <br> This paper won the <strong>FSEM Post-Doctoral Research Prize 2024</strong> from the University of Warwick</li>
+<li><em>Kalai’s <span class="math inline">\(3^d\)</span> conjecture for unconditional and locally anti-blocking polytopes</em> [<a href="https://arxiv.org/abs/2308.02909">arXiv</a>, <a href="https://www.ams.org/journals/proc/2025-153-01/S0002-9939-2024-16909-4">journal</a>] <br> with Raman Sanyal</li>
 </ul>
 <p>I am an active user of the <strong>StackExchange</strong> network. Here are links to my mathematical profiles:</p>
 <ul>
