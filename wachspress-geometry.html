@@ -51,6 +51,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -129,19 +158,227 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Wachspress Geometry</strong> is a young subject in the intersection of geometry, combinatorics and algebra. It is at the core of my <a href="https://www.combinatorial-synergies.de/">SPP 2458 project</a> <em>“Wachspress Coordinates – a bridge betwen Algebra, Geometry and Combinatorics”</em>.</p>
-<p>Wachspress Geometry is …</p>
-<ul>
-<li>… the study of the <strong>Wachspress objects</strong>, a somewhat mysterious family of constructions on convex polytopes. Those emerge in a wide range of seemingly unrelated contexts, and the goal is to explain and exploit these connections and to work towards a unifying explanation for the ubiquity of “Wachspress phenomena”.</li>
-<li>… among the best understood instances of <strong>Positive Geometry</strong>. The goal is to extend tools of Wachspress Geometry to more general positive geometries.</li>
-</ul>
-<p>Perhaps you have already come across some construction from Wachspress Geometry, whether in the shape of a canonical form, a stress in a framework, a model in algebraic statistics, cone volumes or volume differentials.</p>
-<p>Below I will write an introduction to Wachspress Geometry, coming soon …</p>
+<style>
+li {
+  margin: 10px 0;
+}
+</style>
+<p><strong>Wachspress Geometry</strong> is a young subject in the intersection of geometry, combinatorics and algebra. It emerged from the observation of unexpected connection between several mathematical objects defined on convex polytopes. The field is distinguished by the diversity of involved disciplines, including algebraic geometry, polyhedral combinatorics, convex geometry, valuation theory, geometric rigidity, spectral graph theory; also touching on mathematical physics, geometric modeling and statistics.</p>
+<p>The immediate goal of Wachspress Geometry is to explain and exploit these connections and to work towards a unifying explanation for the ubiquity of <em>“Wachspress phenomena”</em> in polytope theory. Another way to frame Wachspress Geometry is as a particularly well-understood instances of <strong>Positive Geometry</strong>. Here the goal would be to extend tools of Wachspress Geometry to more general positive geometries.</p>
+<!--Wachspress Geometry is ...
+
+ * ... the study of the **Wachspress objects**, a somewhat mysterious family of constructions on convex polytopes. Those emerge in a wide range of seemingly unrelated contexts, and the goal is to explain and exploit these connections and to work towards a unifying explanation for the ubiquity of "Wachspress phenomena".
+ * ... among the best understood instances of **Positive Geometry**. The goal is to extend tools of Wachspress Geometry to more general positive geometries.
+
+ Perhaps you have already come across some construction from Wachspress Geometry, whether in the shape of a canonical form, a stress in a framework, a model in algebraic statistics, cone volumes or volume differentials.
+ 
+ Below I will write an introduction to Wachspress Geometry, coming soon ...
+
+ -->
 <p><!--Below I give a brief introduction to some of Wachspress objects that are most central to my research, and some typical questions that I plan to study about them.--></p>
-<p>If you are interested, Rainer Sinn and I are organizing a workshop <a href="https://www.math.uni-leipzig.de/~sinn/wachspress.html">“Wachspress Geometry”</a> in Leipzig on September 24th/25th 2024.</p>
-<p><span class="comingsoon">more coming soon …</span></p>
+<p>Given a convex polytope <span class="math inline">\(P\subset\Bbb R^d\)</span>, the central objects of study are constructed on <span class="math inline">\(P\)</span> and include:</p>
+<ul>
+<li>the <strong>canonical form</strong> <span class="math inline">\(\Omega_P\)</span>, a (geometric) valuation on convex polytopes defined via polar volumes and taking on values in the rational functions.</li>
+<li><strong>adjoint polynomial</strong> <span class="math inline">\(\operatorname{adj}_P\)</span> (or <strong>adjoint</strong> for short) is the lowest degree polynomial vanishing on the polytope’s <em>residual arrangement</em>. Its zero locus is known as <strong>adjoint hypersurface</strong>. The polynomial also appears as the numerator in the canonical form.</li>
+<li><strong>Wachspress coordinates</strong> <span class="math inline">\(\alpha_P:P\to\Delta_n\)</span> are the unique rational barycentric coordinates of <span class="math inline">\(P\)</span> that have the lowest possible degree. Alternative definitions are based on cone volumes in the polar dual. The adjoint appears as the denominator polynomial.</li>
+<li>the <strong>Wachspress variety</strong> <span class="math inline">\(V:=\alpha_P(P)\)</span> is the image of the Wachspress coordinates. It is an algebraic variety of dimension <span class="math inline">\(d\)</span>, smooth inside the <span class="math inline">\(n\)</span>-vertex standard simplex <span class="math inline">\(\Delta_n\)</span>, and intersects the boundary of <span class="math inline">\(\Delta\)</span> in a polyhedral complex isomorphic to <span class="math inline">\(\partial P\)</span>. Its ideal is the <strong>Wachspress ideal</strong> which, if <span class="math inline">\(P\)</span> is simplicial, is related to its Stanley-Reisner ideal.</li>
+<li>the <strong>Izmestiev matrix</strong> <span class="math inline">\(M_P\)</span>, a special Colin de Verdière matrix of the polytopes edge graph. It has a Lorentzian signature and a kernel that encodes the polytopes geometry. Its row sums yield the Wachspress coordinates.</li>
+<li>the <strong>Wachspres stress</strong> <span class="math inline">\(\omega_P\)</span> is a distinguished stress that exists for all <em>coned polytope frameworks</em> and can be seen as a consequence of its piecewise linear structure. It certifies the rigidity (actually prestress stability) of convex coned polytope frameworks. Its clomponents are Wachspress coordinates and entries of the Izmestiev matrix.</li>
+</ul>
+<p>Other related constructions of interest are the Wachspress map (in geometric modeling) and Wachspress models (in algebraic statistics).</p>
+<p>Wachspress Geometry is at the core of my <a href="https://www.combinatorial-synergies.de/">SPP 2458 project</a> <em>“Wachspress Coordinates – a bridge betwen Algebra, Geometry and Combinatorics”</em>. In Septermber 2024, Rainer Sinn and me organized a <a href="https://www.math.uni-leipzig.de/~sinn/wachspress.html">workshop on “Wachspress Geometry”</a> in Leipzig to bring together experts on the various aspects of the field.</p>
+<p>I plan to write here more about the subject. For now I collected literature that can serves as a starting point for the interested reader:</p>
+<section id="literature" class="level3">
+<h3 class="anchored" data-anchor-id="literature">Literature</h3>
+<p><strong>Wachspress coordinates</strong></p>
+<ul>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0898122111003336">E. L. Wachspress, <em>“Barycentric coordinates for polytopes”</em></a></li>
+<li><a href="https://link.springer.com/article/10.1007/BF02127699">J. Warren, <em>“Barycentric coordinates for convex polytopes”</em></a></li>
+<li><a href="https://www.cs.rice.edu/~jwarren/papers/unique.final.pdf">J. Warren, <em>“On the Uniqueness of Barycentric Coordinates”</em></a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0167839606001129">T. Ju, P. Liepa, J. Warren, <em>“A general geometric construction of coordinates in a convex simplicial polytope”</em></a></li>
+<li><a href="https://arxiv.org/abs/1306.4385">M. S. Floater, A, Gillette, N. Sukumar, <em>“Gradient bounds for Wachspress coordinates on polytopes”</em></a></li>
+<li><a href="https://link.springer.com/chapter/10.1007/978-3-319-22804-4_16">M. S. Floater, <em>“Optimality of a Gradient Bound for Polyhedral Wachspress Coordinates”</em></a></li>
+<li><a href="https://www.mn.uio.no/math/english/people/aca/michaelf/papers/wach_mv.pdf">M. S. Floater, <em>“Wachspress and mean value coordinates”</em></a></li>
+<li><a href="https://link.springer.com/article/10.1007/s10208-019-09441-z">K. Kohn, K. Ranestad, <em>“Projective Geometry of Wachspress Coordinates”</em></a></li>
+<li><a href="https://www.mn.uio.no/math/english/people/aca/michaelf/papers/bary_map.pdf">M. S. Floater, J. Kosinka, <em>“On the injectivity of Wachspress and mean value mappings between convex polygons”</em></a></li>
+</ul>
+<p><strong>Canonical forms and Positive Geometry</strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/1703.04541">N. Arkani-Hamed, Y. Bai, T. Lam, <em>“Positive Geometries and Canonical Forms”</em></a></li>
+<li><a href="https://arxiv.org/abs/2208.05407">T. Lam, <em>“An invitation to positive geometries”</em></a></li>
+<li><a href="https://www.arxiv.org/abs/2504.07272">C. Gaetz, <em>“Canonical forms of polytopes from adjoints”</em></a></li>
+<li><a href="https://arxiv.org/abs/2410.21688">Y. Gao, T. Lam, L. Xue, <em>“Dual Mixed Volume”</em></a></li>
+<li><a href="https://www.arxiv.org/abs/2502.20782">C. Eur, T. Lam, <em>“Canonical forms of oriented matroids”</em></a></li>
+</ul>
+<p><strong>The Izmestiev matrix, Wachspress stesses and rigidity theory</strong></p>
+<ul>
+<li><a href="https://link.springer.com/article/10.1007/s11856-010-0070-5">I. Izmestiev, <em>“The Colin de Verdière number and graphs of polytopes”</em></a></li>
+<li><a href="https://academic.oup.com/imrn/article/2024/9/7721/7480215">M. Winter, <em>“Rigidity, Tensegrity and Reconstruction of Polytopes under Metric Constraints”</em></a></li>
+<li><a href="https://arxiv.org/abs/2404.15590">R. Connelly, S. J. Gortler, L. Theran, M. Winter, <em>“The Stress-Flex Conjecturets”</em></a></li>
+<li><a href="pdf/publications/energies_on_coned_polytopes.pdf">R. Connelly, S. J. Gortler, L. Theran, M. Winter, <em>“Energies on Coned Convex Polytopes”</em></a></li>
+</ul>
+<p><strong>Adjoint polynomials and hypersurfaces</strong></p>
+<ul>
+<li><a href="https://link.springer.com/article/10.1007/s10208-019-09441-z">K. Kohn, K. Ranestad, <em>“Projective Geometry of Wachspress Coordinates”</em></a></li>
+<li><a href="https://arxiv.org/abs/2108.11747">K. Kohn et al, <em>“Adjoints and Canonical Forms of Polypols</em>”</a> (also on <a href="https://mathrepo.mis.mpg.de/Adjoints/">mathrepo</a>)</li>
+</ul>
+<p><strong>Wachspress varieties, ideals and models</strong></p>
+<ul>
+<li><a href="https://projecteuclid.org/journals/algebra-and-number-theory/volume-8/issue-2/Geometry-of-Wachspress-surfaces/10.2140/ant.2014.8.369.full">C. Irving, H. Schenck, <em>“Geometry of Wachspress surfaces”</em></a></li>
+<li><a href="https://arxiv.org/abs/1807.10258">K. Kohn, B. Shapiro, B. Sturmfels, <em>“Moment Varieties of Measures on Polytopes”</em></a></li>
+</ul>
+<!--
+
+<span class="comingsoon">more coming soon ...</span>
+
+* Generalized barycentric coordinates
+* Polytope skeleta as spectral embedding and the Izmestiev matrix
+* Cone volumes and variational definitions
+* Stresses in coned polytope frameworks + Maxwell-Cremona correspondence
+* Adjoint polynomial and adjoint hypersurface + projective Geometry of Wachspress coordinated
+* The Wachspress map
+* The Wachspress variety
+* The Wachspress ideal
+
+\DeclareMathOperator{\vol}{vol}
+\newcommand{\bs}{\boldsymbol}
+
+### Generalized barycentric coordinates ###
+
+There are several paths towards Wachspress Geometry.
+Here we follow an approach via *generalized barycentric coordinates*.
+For all that comes we fix a convex polytope $P\subset\Bbb R^d$ with vertices $p_1,...,p_n\in\Bbb R^d$.
+
+Each point $x\in P$ can be expressed as a convex combination of the polytope's vertice, that is,
+
+$$x = \sum_i \alpha_i p_i,\quad \text{where $\alpha_i\ge 0$ and $\alpha_1+\dots+\alpha_n=1$}.$$
+
+If $P$ is a simplex then there is a unique choice for the coefficients $\alpha\in\Bbb R^n$, which are known as [*barycentric coordinates*](https://en.wikipedia.org/wiki/Barycentric_coordinate_system) of $x$.
+<!--They have an immense use for interpolation have widespread applications in geometric modelling, finite element analysis etc.-->
+<!--
+If $P$ is not a simplex, there is more than one way for choosing the convex coefficients. 
+For many applications it is however desirable to have a canonical choice across all points of $P$, that is, a function $\alpha:P\to\Delta_n$ that satisfies *linear precision*:
+
+$$\sum_i \alpha_i(x) p_i = x,\quad\text{for all $x\in P$}.$$
+
+Here $\Delta_n:=\{\alpha\in\Bbb R^n_+\mid \alpha_1+\cdots+\alpha_n=1\}$ is the *standard simplex* or "space of convex coefficients".
+Any such choice is called a system of **generalized barycentric coordinates** (or GBCs).
+Many such GBCs have been conceived for various application. One of them being the **Wachspress coordinates**.
 
 
+
+### Wachspress coordinates ###
+
+**Wachspress coordinates** are a particular systems of generalized barcentric coordinates that exist for every convex polytope. 
+Like many of the best constructions in mathematics, Wachspress coordinates have many equivalent definitions.
+In a sense, their true value for Wachspress Geometry lies in their many seemingly unrelated definitions that link them to a variety of subjects.
+We present some of them below.
+
+### Rational GBCs ###
+
+The classical barycentric coordinates in simplices are linear functions in $x$.
+Linear GBCs are not available for other polytopes, and so the next best choice, one might think, are *polynomial GBCs*.
+Eugene Wachspress however showed that there are polytopes for which no polynomial GBCs exist (in fact, most polytopes don't have polynomial GBCs).
+Instead he constructed a systems of *rational GBCs* that we now call Wachspress coordinates. 
+He defined them initially on polygons in 2D, which were later generalized by Warren to general polytopes in general dimension.
+
+As rational GBCs Wachspress coordinates are of the form
+
+$$\alpha_i(x) = \frac{\mathrm p_i(x)}{\mathrm q(x)},\quad \text{where $\mathrm q(x)=\sum_i\mathrm p_i(x)$}.$$
+
+with polynomials $\mathrm p_i,\mathrm q\in\Bbb R[X_1,...,X_d]$.
+
+If you want to construct them explicitly, you will quickly find that they have to be of the following form:
+
+$$\mathrm p_i(x)=\beta_i(x) \prod_{F\not\ni i} H_F(x),$$
+
+where the product runs over all facets $F$ of $P$ that are not incident to the vertex $p_i$, $H_F$ denotes the linear form that is zero on $\operatorname{aff}(F)$ and positive inside the polytope, and the $\beta_i$ are rational functions that might or might not be necessary to ensure normalization and linear precision. 
+The reason for this form is that if $x$ lies in a facet that does not contain $p_i$, then this vertex cannot contribute to the convex combination for $x$.
+This turns out to be the hard part: how to choose the $\beta_i$? 
+There is no easy answer, but one can compute them from facet volumes in the polar dual $P^\circ$.
+Most importantly however, the degree of $\mathrm p_i$ will eventually turn out precisely $\text{\#facets}-d$.
+
+
+<div class="math thm">
+**Theorem.**
+<br>
+*The Wachspress coordinates are the unique rational GBCs of lowest possible degree. In particular, $\deg(\mathrm p_i)=\text{\#facets}-d$.*
+</div>
+
+Where there are rational functions there are varieties and ideals: the image of $\boldsymbol\alpha:P\to\Delta_n$ gives a variety (or a part of it) inside of the standard simplex. 
+Its Zariski closure is known as the **Wachspress variety**, and the corresponding ideal is the **Wachspress ideal**. Both are objects of intrinsic algebro-geometric interest. 
+Other objects are the **adjoint polynomial** and **adjoint hyperpsurface** of a polytope. ...
+
+
+### WPCs from cone volumes ###
+
+One particularly geometrically pleasing definition of Wachspress coordiantes is via *cone volumes*.
+For this, let us assume that we want to compute the Wachspress coordinates of $x\in \operatorname{int}(P)$,. We translate $P$ so that $x=0$.
+
+$$P^\circ := \big\{x\in\Bbb R^d\mid \langle x,p_i\rangle \text{ for all $i\in\{1,...,n\}$}\big\}.$$
+
+Each vertex $p_i$ of $P$ corresponds to a facet $F_i$ of $P^\circ$. Let $C_i$ be the cone over $F_i$ with apex at the origin. The Wachspress coordiantes are then simply given by
+
+$$\alpha_i(x) := \frac{\operatorname{vol}(C_i)}{\operatorname{vol}(P^\circ)} = \frac{\operatorname{vol}(F_i)}{\|p_i\| \operatorname{vol}(P^\circ)}.$$
+
+We can also easily check that this satisfies linear precision:
+
+$$
+\sum_i \alpha_i(x) p_i 
+=\sum_i \frac{\operatorname{vol}(F_i)}{\|p_i\| \operatorname{vol}(P^\circ)} p_i 
+= \frac1{\operatorname{vol}(P^\circ)} \sum_i n_i \operatorname{vol}(F_i) 
+= 0,
+$$
+
+where $n_i:=p_i/\|p_i\|$ is the normal vector of the facet $F_i$, and the last equality is therefore simply *Minkowski's balancing condition* for polytopes.
+
+
+### The Lovász-Izmestiev matrix ###
+
+I personally encountered Wachspress coordinates first by studying the spectral graph theory of polytope skeleta. I found that Wachspress coordinates are merely a shadow of a higher rank objects.
+
+Let $G=(V,E)$ be a graph. *Spectral graph theory* studies the spectral properties of matrices associated to $G$, such as the *adjacency matrix* $A$ or the *Laplace matrix* $L$. 
+It can also be used to construct embeddings of $G$ into Eucliden space that reflect some of the combinatorial properties of $G$ geometrically.
+
+For example, fix an eigenvalue $\theta\in\operatorname{Spec}(A)$ and a basis $u_1,...,u_d\in\Bbb R^n$ of the associated eigenspace $\operatorname{Eig}_G(\theta)$. Let $\Phi\in\Bbb R^{n\times d}$ be the matrix that has the $u_i$ as its columns. Its rows correspond the the vertices of the graph, and so by reading out the matrix row-wise, we obtain an embedding of $G$ into $d$-dimensional Euclidean space.
+
+$$...$$
+
+This is called a **spectral embedding** of $G$ w.r.t. $\theta$.
+Being a spectral embedding is a very special property, and most embedding are not spectral.
+The surprising result due to Lovász ($d=3$) and Izemstiev ($d> 3$) was that the skeleton of a polytope $P$ is always a spectral embedding of the edge graph $G_P$, assuming a suitable weighting of the vertices and edges.
+
+<div class="math thm">
+**Theorem.** (Lovász, Izmestiev)
+<br><it>
+There is a matrix $M\in\Bbb R^{n\times n}$ so that ...
+
+1. asdasd
+2. adasda
+3. adasd
+
+</it>
+</div>
+
+The connection to Wachspress Geometry is the following: 
+
+$$\alpha_i(x)=\sum_j M_{ij}(x),\quad\text{for all $i\in \{1,...,n\}$}.$$
+
+
+### Volume variations ###
+
+$$\vol(P^\circ(\bs c)) = \vol(P^\circ) + \langle\tilde{\bs\alpha},\bs c-\bs 1\rangle + \tfrac12 (\bs c-\bs 1)^\top \tilde M (\bs c - \bs 1) + \cdots $$
+
+
+### Stresses in coned polytope frameworks ###
+
+* Stress-flex conjecture
+
+
+-->
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
