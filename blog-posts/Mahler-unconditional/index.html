@@ -183,7 +183,7 @@ M(B):=\operatorname{vol}(B)\operatorname{vol}(B^\circ).
 <h4 class="anchored" data-anchor-id="coordinate-symmetric-bodies-and-convex-corners">Coordinate symmetric bodies and convex corners</h4>
 <p>A convex body <span class="math inline">\(B\subset\Bbb R^n\)</span> is <strong>coordinate symmetric</strong> if it is invariant under reflection on each coordinate hyperplane <span class="math inline">\(H_i:=\{x_i=0\}\)</span>. A number of properties make coordinate symmetric bodies a natural special case for studying the Mahler conjecture: they are centrally symmetric, closed under polarity, and they contain all Hanner polytopes. <!-- $x=(x_1,...,x_n)\in B$ follows $(\pm x_1,...,\pm x_n)\in B$ as well. Or eq--> <!--This class of convex bodies is in the literature better known as *unconditional bodies*.
 I am unsure about the origin of this term, and I tend to dislike it since it is seems the opposite of self-explanatory.--></p>
-<p><img class="center" src="symmetric.svg" width="50%"></p>
+<p><img class="center" src="symmetric.svg" width="350px" max-width="95%"></p>
 <p>In the literature these bodies are often called “unconditional bodies”, a term going back to “unconditional convergence” motivated from Banach space theory. For geometric (that is, finite-dimensional) discussions I prefer to go with the more visually inspired term “coordinate symmetric”.</p>
 <p>A coordinate symmetric body <span class="math inline">\(B\)</span> is clearly determined by its restriction <span class="math inline">\(B_+:=B\cap\Bbb R^n_+\)</span> to the positive orthant <span class="math inline">\(\Bbb R_+^n:=\{x_i\ge 0\}\)</span>. A set <span class="math inline">\(B_+\subset\Bbb R^n_+\)</span> that can be written as such a restriction of a coordinate symmetric body is called a <strong>convex corner</strong> (also known as an <em>anti-blocking body</em>).</p>
 <p><img class="center" src="corners.svg" width="95%" style="margin-top:1ex; margin-bottom:1ex;"></p>
@@ -206,7 +206,7 @@ I am unsure about the origin of this term, and I tend to dislike it since it is 
 = \frac1{\operatorname{vol}_{n}(B_+)} \cdot \sum_{i=1}^n \underbrace{\tfrac1n{x_i \operatorname{vol}_{n-1}(B_i)}}_{\operatorname{vol}_n(C_i)},
 \]</span></p>
 <p>where <span class="math inline">\(C_i\)</span> is the cone with base face <span class="math inline">\(B_i\)</span> and apex at <span class="math inline">\(x\)</span>.</p>
-<p><img class="center" src="proof.svg" width="23%"></p>
+<p><img class="center" src="proof.svg" width="150px"></p>
 <p>If <span class="math inline">\(x\in B_+\)</span> then the cones <span class="math inline">\(C_i\)</span> have disjoint interiors and are contained in <span class="math inline">\(B_+\)</span>. In particular, the sum of their volumes is bounded by <span class="math inline">\(\operatorname{vol}_n(B_+)\)</span>. Therefore <span class="math inline">\(\langle x,v\rangle \le 1\)</span> for all <span class="math inline">\(x\in B_+\)</span>, and hence <span class="math inline">\(v\in B_+^*\)</span>. By an analogous argument holds <span class="math inline">\(v^*\in B_+\)</span>. Hence, we can conclude</p>
 <p><span class="math display">\[
 \begin{align}
@@ -219,13 +219,13 @@ I am unsure about the origin of this term, and I tend to dislike it since it is 
 <p><span class="math display">\[
 M_+(B_+) \ge \frac1{n^2} \sum_{i=1}^n M_+(B_i) \ge \frac1{n^2} \cdot\frac{n}{(n-1)!} = \frac1{n!}.
 \]</span></p>
-<p>From this proof one can also extract the minimizers. Those turn out to be precisely the <em>Hanner corners</em> (that is, the positive corners of Hanner polytopes). Consequently, the minimizers among the coordinate symmetric bodies are indeed the Hanner polytopes.</p>
+<p>From this proof one can also extract the minimizers. Those turn out to be precisely the <em>Hanner corners</em> (that is, the convex corners of Hanner polytopes). Consequently, the minimizers among the coordinate symmetric bodies are indeed the Hanner polytopes.</p>
 </section>
 <section id="its-not-about-central-symmetry-anymore" class="level4">
 <h4 class="anchored" data-anchor-id="its-not-about-central-symmetry-anymore">It’s not about central symmetry anymore</h4>
 <p>Coordinate symmetric bodies might seem a bit … restrictive. After all, they require quite some symmetry. However, as it turns out, once the problem is solved for convex corners, there is no longer any need to piece them together into a coordinate symmetric body to satisfy the Mahler conjecture. Even wilder, we don’t even need central symmetry anymore!</p>
 <p>A <strong>locally anti-blocking body</strong> is a convex body that if restricted to any orthant yields a convex corner (this is the official term, I don’t yet have a good idea for a more visually descriptive name).</p>
-<p><img class="center" src="piecewise.svg" width="52%"></p>
+<p><img class="center" src="piecewise.svg" width="350px"></p>
 <p>Locally anti-blocking bodies are a much richer family of bodie as compared to the highly symmetric coordinate symmetric bodies. In fact, they need not even be centrally symmetric! Still, they are closed under polar duality and share a number of nice properties with coordinate symmetric bodies.</p>
 <p>The Mahler conjecture for locally anti-blocking bodies can be proven using the Cauchy-Schwarz inequality. For <span class="math inline">\(\sigma\in\{-1,+1\}^n\)</span> write <span class="math inline">\(\Bbb R^n_\sigma:=\{x\in\Bbb R^n\mid \sigma_i x_i\ge 0\}\)</span>. For a locally anti-blocking body <span class="math inline">\(B\)</span> define</p>
 <p><span class="math display">\[
