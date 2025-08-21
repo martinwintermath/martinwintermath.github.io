@@ -51,6 +51,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -129,14 +158,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<style>
+li {
+  margin: 5px 0;
+}
+</style>
 <ul>
-<li>starting in 2025: principal investigator for DFG project (<a href="https://www.combinatorial-synergies.de/">SPP 2458</a>) at Max-Planck-Institute for Mathematics in the Sciences</li>
+<li>starting 2025: principal investigator for DFG project (<a href="https://www.combinatorial-synergies.de/">SPP 2458</a>) at Max-Planck-Institute for Mathematics in the Sciences</li>
 <li>Since 2024: guest researcher at the <a href="https://www.mis.mpg.de/de/">Max-Planck-Institute for Mathematics in the Sciences</a></li>
 <li>Since 2024: <a href="https://www.math-berlin.de/bms-faculty/dirichlet-postdoctoral-program">Dirichlet fellow</a> at <a href="https://www.tu.berlin/math">TU Berlin</a></li>
 <li>2021 – 2024: Postdoc at the <a href="https://warwick.ac.uk/fac/sci/maths/">University of Warwick</a> with <a href="https://homepages.warwick.ac.uk/~maslar/">Agelos Georgakopoulos</a></li>
-<li>2018 – 2021: Doctorate in Mathematics at <a href="https://www.tu-chemnitz.de/mathematik/">TU Chemnitz</a> in the group “Algorithmic and Discrete Mathematics” of <a href="https://www-user.tu-chemnitz.de/~helmberg/">Christoph Helmberg</a> <br> Thesis: <em>Spectral Realizations of Symmetric Graphs, Spectral Polytopes and Edge-Transitivity</em> <br> [<a href="pdf/phd/thesis.pdf">thesis</a>], [<a href="pdf/phd/slides.pdf">slides</a> of defense talk]</li>
+<li>2018 – 2021: Doctorate in Mathematics at <a href="https://www.tu-chemnitz.de/mathematik/">TU Chemnitz</a> in the group “Algorithmic and Discrete Mathematics” of <a href="https://www-user.tu-chemnitz.de/~helmberg/">Christoph Helmberg</a> <br> Thesis: <em>Spectral Realizations of Symmetric Graphs, Spectral Polytopes and Edge-Transitivity</em>. <br> [<a href="pdf/phd/thesis.pdf">thesis</a>], [<a href="pdf/phd/slides.pdf">slides</a>]</li>
 <li>2016 – 2018: Research fellow at the working group of Computer Graphics at TU Chemnitz</li>
-<li>2013 – 2015: Master in Mathematics with Computer Science (minor in Physics) at TU Chemnitz</li>
+<li>2013 – 2015: Master in Mathematics with Computer Science (minor in Physics) at TU Chemnitz <br> Thesis: <em>Notes on <span class="math inline">\(P(k)\)</span>-graphs and the conjecture of Kotzig</em>. <br> [<a href="pdf/master_thesis.pdf">thesis</a>]</li>
 <li>2010 – 2013: Bachelor in Computational Science at TU Chemnitz (Germany)</li>
 </ul>
 <p>Or click here for my <a href="pdf/cv.pdf">full CV</a> (last updated: May 2025).</p>
