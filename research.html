@@ -51,6 +51,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -133,18 +162,72 @@ ul.task-list li input[type="checkbox"] {
 <p>I work and publish on</p>
 <ul>
 <li>polyhedral combinatorics and geometry,</li>
+<li>geometric rigidity theory (polyhedral rigidity, second-order theory, …)</li>
 <li>graph theory (spectral, algebraic, geometric and topological),</li>
-<li>rigidity theory, geometric constraint system and real algebraic geometry,</li>
 <li>low-dimensional topology (knot theory, embeddings and embeddability of graphs and complexes, …)</li>
 <li>symmetries of discrete and geometric objects,</li>
+<li>convex geometry,</li>
+<li>real algebraic geometry,</li>
 <li>finite group theory and real representation theory,</li>
 <li>algebraic combinatorics (association schemes, distance regular graphs, codes …),</li>
-<li>convex geometry,</li>
 <li>random structures and graph limits,</li>
 <li>discrete dynamical systems,</li>
 <li>…</li>
 </ul>
 <p>My current main project is on the <a href="./wachspress-geometry.html">Wachspress Geometry</a> of convex polytopes.</p>
+<hr>
+<section id="polytopes" class="level3">
+<h3 class="anchored" data-anchor-id="polytopes">Polytopes</h3>
+<p><img src="img/polyhedron.png" width="150px" style="float:left; margin-right:30px"></p>
+<p><strong>Polytopes</strong> can be defined either as the convex hull of finitely many points or as the (bounded) intersection of finitely many halfspaces. Their purpose is to generalize polygons and polyhedra to dimensions four and above. As convex bodies they are clearly objects of convex geometry. But their boundary carries an intricate combinatorial structure which makes them accessible by tools of combinatorics. The interplay of the combiantorics and geometry often invovles algebraic geometry.</p>
+<p>Polytope theory is at the core of my mathematical interests and many other questions and topics I work on have some aspect of polytope theory.</p>
+<hr>
+<p><img src="img/polyhedron.png" width="150px" style="float:left; margin-right:30px"></p>
+<p><strong>Rigidity theory</strong> deals with the local and global uniqueness of geometric structures. Historically mathematicians studied bar-joint frameworks: straight line embeddings of graphs. The main question is usually: can the frameworks be deformed while preserving all edge lengths? I study rigidity theory mostly in the context of polytope theory.</p>
+<hr>
+<p><img src="img/polyhedron.png" width="150px" style="float:left; margin-right:30px"></p>
+<p><strong>Spectral graph theory</strong> studies graphs by extracting information from the spectrum of the graph’s adjacency matrix or Laplace matrix. <strong>Algebraic graph theory</strong> studies graphs of high symmetry or regularity. Spectral techniques have been established as very powerful tools for algebraic question, and so these topics go hand in hand. Spectral graph embeddings can furthermore be used to obtain geometric embeddings of graphs that reflect the graphs combiantorical properties geometrically. I have been working on spectral embeddings of polytope skeleta. A modern core result here is Izmestiev’s theorem which states that all polytope skeleta are spectral embeddings of the edge graph.</p>
+<hr>
+<p><img src="img/polyhedron.png" width="150px" style="float:left; margin-right:30px"></p>
+<p><strong>Topological graph theory</strong> studies graphs as topological spaces, and properties and graph classes defined on that point of view. Prominent examples are planar, linkless and knotless graphs. Topological graph theory is intimately linked to graph minor theory because many topologically defined graph classes can be characterized by excluded minors. I studied 4-flat graphs, which are a 4D analogue of planarity. Through this I became interested in <strong>low-dimensional topology</strong>, and in particular, the embeddability of 2-dimensional CW-complexes in <span class="math inline">\(\Bbb R^4\)</span>, the only case where the well-understood homological obstructions fail to be complete.</p>
+<hr>
+<p><img src="img/polyhedron.png" width="150px" style="float:left; margin-right:30px"></p>
+<p><strong>Lean</strong> is a modern tool for formalizing mathematical proofs. I am working on formalizing polytope theory in Lean.</p>
+<!--
+<table>
+<tr>
+    <td>
+    **Polytopes** generalize the idea of polygons and polyhedra to general dimensions.
+*Convex* polytopes are, first and foremost, convex sets and are therefore subject to the tools of convex geometry.
+At the same time they come equipped with a rich combinatorial structure which makes them also very accessible from combiantorics.
+    </td>
+    <td>
+    <img src="img/polyhedron.png" width="150px"/>
+    </td>
+</tr>
+<table>
+<tr>
+    <td>
+    <img src="img/polyhedron.png" width="150px"/>
+    </td>
+    <td>
+    **Polytopes** generalize the idea of polygons and polyhedra to general dimensions.
+*Convex* polytopes are, first and foremost, convex sets and are therefore subject to the tools of convex geometry.
+At the same time they come equipped with a rich combinatorial structure which makes them also very accessible from combiantorics.
+    </td>
+</tr>
+</table>
+
+
+
+<img src="img/polyhedron.png" width="150px" style="float: right;"/>
+
+**Polytopes** generalize the idea of polygons and polyhedra to general dimensions.
+*Convex* polytopes are, first and foremost, convex sets and are therefore subject to the tools of convex geometry.
+At the same time they come equipped with a rich combinatorial structure which makes them also very accessible from combiantorics.
+
+
+-->
 <!--
 
 ---
@@ -177,6 +260,7 @@ At the same time, symmetries of geometric objects ...
 -->
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
