@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Short CV – Martin Winter</title>
+<title>AI Math – Martin Winter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,35 +51,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -105,7 +76,7 @@ window.Quarto = {
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ai-math.html"> 
+    <a class="nav-link active" href="./ai-math.html" aria-current="page"> 
 <span class="menu-text">AI Math</span></a>
   </li>  
   <li class="nav-item">
@@ -117,7 +88,7 @@ window.Quarto = {
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./cv.html" aria-current="page"> 
+    <a class="nav-link" href="./cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
@@ -141,7 +112,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Short CV</h1>
+<h1 class="title">AI Math</h1>
 </div>
 
 
@@ -158,90 +129,18 @@ window.Quarto = {
 </header>
 
 
-<style>
-li {
-  margin: 5px 0;
-}
-</style>
+<p>The availability of modern AI tools allows me to produce results (better, <em>resultoids</em>) faster than I can write papers. These are far from publication ready, and I will not upload them to arXiv (though I plan to turn many of them into papers eventually). My personal vision for the future is a “Pluribus” mode for mathematics, where everybody’s results are immediately available to everybody everywhere. For this reason I am going to share these preliminary results in their raw form already here, for everyone to see, check and use, assuming proper attribution and transparency about their origin.</p>
+<section id="resultoids" class="level3">
+<h3 class="anchored" data-anchor-id="resultoids">Resultoids</h3>
 <ul>
-<li>Since 2026: Principal investigator for DFG project (<a href="https://www.combinatorial-synergies.de/">SPP 2458</a>) at <a href="https://www.mis.mpg.de/de/">Max-Planck-Institute for Mathematics in the Sciences</a></li>
-<li>2024 – 2025: <a href="https://www.math-berlin.de/bms-faculty/dirichlet-postdoctoral-program">Dirichlet fellow</a> at <a href="https://www.tu.berlin/math">TU Berlin</a></li>
-<li>2021 – 2024: Postdoc at the <a href="https://warwick.ac.uk/fac/sci/maths/">University of Warwick</a> with <a href="https://homepages.warwick.ac.uk/~maslar/">Agelos Georgakopoulos</a></li>
-<li>2018 – 2021: Doctorate in Mathematics at <a href="https://www.tu-chemnitz.de/mathematik/">TU Chemnitz</a> in the group “Algorithmic and Discrete Mathematics” of <a href="https://www-user.tu-chemnitz.de/~helmberg/">Christoph Helmberg</a> <br> Thesis: <em>Spectral Realizations of Symmetric Graphs, Spectral Polytopes and Edge-Transitivity</em>. <br> [<a href="pdf/phd/thesis.pdf">thesis</a>], [<a href="pdf/phd/slides.pdf">slides</a>]</li>
-<li>2016 – 2018: Research fellow at the working group of Computer Graphics at TU Chemnitz</li>
-<li>2013 – 2015: Master in Mathematics with Computer Science (minor in Physics) at TU Chemnitz <br> Thesis: <em>Notes on <span class="math inline">\(P(k)\)</span>-graphs and the conjecture of Kotzig</em>. <br> [<a href="pdf/master_thesis.pdf">thesis</a>]</li>
-<li>2010 – 2013: Bachelor in Computational Science at TU Chemnitz (Germany)</li>
+<li><div>
+<em>A self-dual polytope without a self-polar realization</em> (<a href="pdf/aimath/self-dual-without-self-polar.pdf">pdf</a>, <a href="pdf/aimath/self-dual-without-self-polar.zip">supp. material</a>)
+</div>
+This answers a question by Jensen. The idea is interesting: one constructs a 10-dimensional polytope where one face is the 4-dimensional BEK-polytope which has a non-realizable symmetry. One then ensures that a self-polar realization must realize this symmetry, which cannot be.</li>
 </ul>
-<p>Or click here for my <a href="pdf/cv.pdf">full CV</a> (last updated: May 2025).</p>
-<!--
-
-* studied Computational Science (Bachelor) and Mathematics with Computer Science (Master) at TU Chemnitz.
-* worked at the working group of Computer Graphics at TU Chemnitz.
-* obtained my PhD in Mathematics at TU Chemnitz.
-* postdoc at the University of Warwick (UK)
-* Dirichlet fellow at TU Berlin
-* (upcoming, April 2025) principal investigator for my DFG project at the  Max-Planck-Institute for Mathematics in the Sciences in Leipzig (Germany).
 
 
-<span class="comingsoon">more coming soon</span>
-
--->
-<!-- 
-
-### Conferences & Workshops ###
-
-<h5> 2024 </h5>
-
-* Combinatorial Coworkspace (Kleinwalsertal), Talk: *"Wachspress Coordinates - a bridge between algebra, geometry and combinatorics"* (slides)
-* Landscapes of Rigidity Workshop during the RICAM Special Semester on Rigidity and Flexibility (Linz), Talk: *"Rigidity of Polyhedral Spheres beyond Triangulations"* (slides)
-* Workshop on Geometric and Algebraic Combinatorics (Santander), Talk: *"Kalai's 3<sup>d</sup> Conjecture for Coordinate Symmetric Polytopes"* (slides)
-
-<h5> 2023 </h5>
-
-* Birmingham Warwick Joint Combinatorics Seminar (Birmingham), Talk: *"Kalai's 3d Conjecture for Coordinate Symmetric Polytopes"* (slides)
-* British Early Career Mathematicians' Colloquium (Birmingham), Talk: *"Infinite linkless graphs and their forbidden minors"* (slides)
-* Workshop on Geometric Constraints at Fields Institute (Toronto), Talk: *"Rigidity and Tensegrity of Frameworks from Convex Polytopes"* (slides, video)
-* 24 Hours of Combinatorial Synergies (Magdeburg)
-* Graph Rigidity and Application (Lancaster), Talk: *"Rigidity and Tensegrity of Frameworks from Polytopes"* (slides)
-
-<h5> 2022 </h5>
-
-* Symposium on Discrete Mathematics (Hamburg), Talk: *"Using Izmestiev's Theorem - a tool in spectral polytope theory"* (slides)
-* DMV Annual Meeting (FU Berlin), Talk: *"Geometric Expansion and Rigidity Properties of Polytope Skeleta"* (slides)
-* Geometry meets Combinatorics (Bielefeld)
-* LMS Research School on Knowledge Exchange in rigidity, flexibility and applications (Lancaster)
-* 29th British Combinatorial Conference (Lancaster), Talk: *"(Random) Trees of Intermediate Volume Growth"* (slides)
-* Combinatorial Coworkspace (Kleinwalsertal), Talk: *"Expansion Properties of Polytope Skeleta"* (slides)
-
-<h5> 2021 </h5>
-
-* (Polytop)ics (MPI Leipzig, online), Talk: *"Capturing Polytopal Symmetries in the Edge-Graph"* (slides, video)
-DMV-ÖMG Annual Conference (Passau)
-
-<h5> 2020 </h5>
-
-* DMV Annual Conference (Chemnitz), Talk: *"Spectral Graph Theory for Polytopes"* (slides)
-* Combinatorial Coworkspace (Kleinwalsertal), Talk: *"Inscribed Zonotopes and Hyperplane Arrangements with Congruent Chambers"* (slides)
-
-<h5> 2019 </h5>
-
-* Geometry Day (Jena), Talk: *"Edge-Transitive Polytopes"*
-* Colloquium on Combiantorics (Kolkom, Paderborn), Talk: *"Edge-Transitive Polytopes"* (slides)
-* South Eastern Graph Theory Workshop (Chemnitz), Talk: *"Edge-Transitive Polytopes"*
-* Discrete Geometry Day^2 (Budapest), Talk: *"Spectral Methods for Symmetric Polytopes"* (slides)
-* Summer School on Geometric & Algebraic Combinatorics (GAC, Paris)
-* Polytope Spring School (Bochum), Talk: *"Spectral Methods for Symmetric Polytopes"*
-
-<h5> 2018 </h5>
-
-* South Eastern Graph Theory Workshop (Freiberg)
-Geomtry Day (Dresden)
-* South Eastern Graph Theory Workshop (Chemnitz)
-FRICO (Chemnitz), Talk: *"Spectral Methods for Symmetric Polytopes"*
-
--->
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
